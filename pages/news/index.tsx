@@ -81,7 +81,8 @@ export async function getStaticProps(): Promise<{
 	return {
 		props: {
 			data: {data: res.data, total: res.total}
-		}
+    },
+    revalidate: 1,
 	}
 }
 

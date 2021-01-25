@@ -128,7 +128,8 @@ export async function getStaticProps(): Promise<{
 		props: {
       case: caseData.data,
       news: newsData.data,
-		}
+    },
+    revalidate: 1,
 	}
 }
 

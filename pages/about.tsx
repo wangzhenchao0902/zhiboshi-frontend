@@ -101,6 +101,7 @@ export async function getStaticProps(): Promise<{
 	return {
 		props: {
 			data: res.data
-		}
+    },
+    revalidate: 1,
 	}
 }
