@@ -5,6 +5,7 @@ export const LOGO = '/static/logo.png'
 export const KV_IMAGES = [
   '/static/kv-1.jpg',
   '/static/kv-2.jpg',
+  '/static/kv-3.jpg',
 ]
 
 // banner
