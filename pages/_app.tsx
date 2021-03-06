@@ -1,6 +1,7 @@
 import App from 'next/app'
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
+import Head from 'next/head'
 
 const HtmlStyle = createGlobalStyle`
   * {
@@ -28,6 +29,10 @@ class Zbs extends App {
       return (
         <React.Fragment>
           <HtmlStyle />
+          <Head>
+            <title>智博士</title>
+            <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+          </Head>
           <Component {...pageProps}>
           </Component>
         </React.Fragment>

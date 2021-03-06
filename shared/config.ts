@@ -24,7 +24,7 @@ export const INDEX_DESCRIPTIONS = {
   },
   'd2': {
     'first': '匠心品质',
-    'second': '三年质保、科技防伪',
+    'second': '十年质保、科技防伪',
     'third': '中科院合作品牌',
   },
   'd3': {
