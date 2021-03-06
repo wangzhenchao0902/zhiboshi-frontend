@@ -1,7 +1,9 @@
 import React from 'react';
 import 'antd/dist/antd.css'
+import { Alert } from 'antd';
 import { Form, message, Input, Button } from 'antd';
 import styled from 'styled-components'
+import { useState } from 'react'
 import {registerWarranties} from '../../api/warranty'
 
 const Div = styled.div`
@@ -38,12 +40,15 @@ const validateMessages = {
 
 const Register = (props: {query: {sn: string}}) => {
 
+  const [suc, setSuc] = useState(false)
+
   const onFinish = async (values) => {
     const res = await (await registerWarranties(values)).json()
     if (res.result) {
-      message.success('注册成功');
+      setSuc(true)
+      // message.success('注册成功');
     } else {
-      message.error('res.msg');
+      message.error(res.msg);
     }
   };
 
@@ -53,7 +58,14 @@ const Register = (props: {query: {sn: string}}) => {
       智博士质保注册
     </Header>
     <Div>
-      <Form {...layout}
+      {suc &&<Alert
+        message="注册成功"
+        description="您可到智博士官网查询质保期限。"
+        type="success"
+        showIcon
+      />
+      }
+      {!suc && <Form {...layout}
         layout="vertical"
         name="nest-messages"
         onFinish={onFinish} 
@@ -98,6 +110,7 @@ const Register = (props: {query: {sn: string}}) => {
           </Button>
         </Form.Item>
       </Form>
+        }
     </Div>
     </>
   );
