@@ -16,6 +16,7 @@ const StyledContent = styled.div`
 `
 
 const StyledSection = styled.section`
+  white-space: pre-wrap;
   margin-bottom: 30px;
 `
 
