@@ -32,6 +32,7 @@ const Title = styled.div`
 `
 const Content = styled.form`
   padding: 10px 30px 0;
+  & p:empty{ padding: .75em; }
 `
 
 const StyledMain = styled.main`
