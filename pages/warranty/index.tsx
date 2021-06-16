@@ -104,6 +104,12 @@ const Register = (props: {query: {sn: string}}) => {
         >
           <Input />
         </Form.Item>
+        <Form.Item
+          name="vin"
+          label="车架号"
+        >
+          <Input />
+        </Form.Item>
         <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 10 }}>
           <Button type="primary" htmlType="submit">
             注册

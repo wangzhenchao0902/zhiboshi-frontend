@@ -74,22 +74,27 @@ const AntiFake: React.FC = () => {
           </SelectForm>
           <WarrantyList>
             {data instanceof Array && data.length > 0 && (
-              <List>
-                <List.Item>
-                  <div>姓名</div>
-                  <div>手机号</div>
-                  <div>开始时间</div>
-                  <div>结束时间</div>
-                </List.Item>
-                {data.map(item => (
-                  <List.Item key={item.id}>
-                    <div>{item.name}</div>
-                    <div>{item.phone}</div>
-                    <div>{item.start_at}</div>
-                    <div>{item.end_at}</div>
+              <>
+                <List>
+                  <List.Item>
+                    <div>姓名</div>
+                    <div>手机号</div>
+                    <div>质保时长</div>
+                    <div>开始时间</div>
+                    <div>结束时间</div>
                   </List.Item>
-                ))}
-              </List>
+                  {data.map(item => (
+                    <List.Item key={item.id}>
+                      <div>{item.name}</div>
+                      <div>{item.phone}</div>
+                      <div>{item.year}年</div>
+                      <div>{item.start_at}</div>
+                      <div>{item.end_at}</div>
+                    </List.Item>
+                  ))}
+                </List>
+                <>售后政策：免费终身补膜 总计不超15米 </>
+              </>
             )}
             {data instanceof Array && data.length === 0 && (
               <>抱歉，未查到相关质保记录</>
