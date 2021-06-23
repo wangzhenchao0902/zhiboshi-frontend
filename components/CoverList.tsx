@@ -27,10 +27,12 @@ const CoverListContainer = styled.div`
     margin-bottom: 14px;
     img {
       width: 100%;
-      object-fit: fill;
+      height: 100%;
+      object-fit: cover;
       transition: transform 0.3s ease 0s, box-shadow 0.5s ease 0s;
     }
     img:hover {
+      transform: scale(1.15);
       box-shadow: rgba(0, 0, 0, 0.637) 0 0 20px 0px;
     }
   }

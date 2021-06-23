@@ -107,7 +107,8 @@ const getIndexCase = async () => {
 }
 
 const getIndexNews = async () => {
-  const res = await queryNews({recommend: 1, per_page: 9});
+  // const res = await queryNews({recommend: 1, per_page: 9});
+  const res = await queryNews({ per_page: 9});
   const json = await res.json()
   const datas = [];
   if (json.result) {

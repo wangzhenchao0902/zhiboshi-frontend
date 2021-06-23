@@ -23,6 +23,8 @@ const Content = styled.div`
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
+
+  & a{ color: #fff; }
 `
 
 const Logo = styled.div`
@@ -49,21 +51,25 @@ const Article = styled.div`
 
 const Contact = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   img {
-    height: 80px;
-    height: 80px;
+    height: 120px;
+    height: 120px;
   }
   height: 120px;
 `
 
 const Qr = styled.div`
+  margin-top: 10px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  margin-left: 10px;
+  text-align: center;
   img {
-    height: 80px;
-    height: 80px;
+    height: 120px;
+    height: 120px;
   }
 `
 
@@ -82,19 +88,19 @@ class Footer extends React.Component {
             <img src="/static/logo-white.png"></img>
           </Logo>
           <Article>
-            <p>联系我们</p>
-            <p>售后服务</p>
-            <p>天猫地址</p>
-            <p>淘宝地址</p>
+            <p><a href='mailto:wanghaic@ctime.net.cn' target='_blank'>联系我们</a></p>
+            <p><a href='https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.1.466d14aeYKazSs&id=637914810177&skuId=4596575237340&user_id=2208842654796&cat_id=2&is_b=1&rn=c3a223361040bae8f1becf47b8e8bb80' target="_blank">天猫地址</a></p>
+            <p><a href='https://item.jd.com/10030890973547.html' target="_blank">京东地址</a></p>
           </Article>
           <Contact>
             <Qr>
-              <img src="/static/qr.png" />
+              <img src="/static/wx_qr.jpg" />
+              <p>微信公众号</p>
             </Qr>
-            <Phone>
-              <svg className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3343" width="32" height="32"><path d="M510.834454 76.245522c-240.85865 0-436.111612 195.252962-436.111612 436.110589 0 240.85865 195.252962 436.106496 436.111612 436.106496 240.856603 0 436.104449-195.247846 436.104449-436.106496C946.938903 271.499507 751.691057 76.245522 510.834454 76.245522L510.834454 76.245522 510.834454 76.245522 510.834454 76.245522zM510.834454 910.554228c-219.910549 0-398.204258-178.292686-398.204258-398.198118 0-219.909525 178.292686-398.202211 398.204258-398.202211 219.903386 0 398.202211 178.292686 398.202211 398.202211C909.031549 732.261543 730.73784 910.554228 510.834454 910.554228L510.834454 910.554228 510.834454 910.554228 510.834454 910.554228zM599.052658 552.11565c-19.951401 0-35.060517 17.962094-53.159734 17.962094-17.955954 0-96.768951-77.677127-96.768951-96.77509 0-19.09694 17.955954-28.502148 17.955954-48.310286 0-14.260795-53.15871-101.476159-74.961272-101.476159-21.813818 0-74.968435 38.905078-74.968435 74.962296 0 104.329137 192.397938 304.288285 312.827775 304.288285 33.208333 0 74.973552-35.065634 74.973552-74.973552C705.232956 612.82943 618.860796 552.11565 599.052658 552.11565" p-id="3344" fill="#ffffff"></path></svg> 
-              &nbsp;400-0108-803
-            </Phone>
+            <Qr>
+              <img src="/static/wb_qr.jpg" />
+              <p>新浪微博</p>
+            </Qr>
           </Contact>
         </Content>
         <Copyright><span><img src='/static/icon-police.png' /> 渝ICP备2020014744号</span></Copyright>
