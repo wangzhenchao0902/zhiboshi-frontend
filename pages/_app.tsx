@@ -30,7 +30,8 @@ class Zbs extends App {
         <React.Fragment>
           <HtmlStyle />
           <Head>
-            <title>智博士 - 博士隐形车衣</title>
+            <title>智博士-智博士隐形车衣,路博润Tpu隐形车衣-中科院研发,中科制造,中科新材料科技有限公司</title>
+            <meta name='keywords' content='智博士,路博润Tpu隐形车衣,中科院研发,智博士隐形车衣,中科制造,中科新材料科技有限公司' />
             <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
           </Head>
           <Component {...pageProps}>
