@@ -1,6 +1,8 @@
 import Header from '../../components/Header'
 import styled from 'styled-components'
 import React from 'react'
+import Kv from '../../components/Kv'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Footer from '../../components/Footer'
 import { showArticle, allIds } from '../../api/article'
@@ -12,7 +14,7 @@ const StyledContent = styled.div`
 	margin: 20px auto;
   padding: 30px 0;
   min-height: 600px;
-  background-color: #ffffff;
+  // background-color: #ffffff;
 `
 
 const StyledSection = styled.section`
@@ -25,6 +27,7 @@ const Title = styled.div`
   font-weight: bold;
   text-align: center;
   display: block;
+  color: #fff;
   &>p {
     font-size: 12px;
     color: #646262;
@@ -32,10 +35,24 @@ const Title = styled.div`
 `
 const Content = styled.form`
   padding: 10px 30px 0;
+  color: #fff;
 `
 
 const StyledMain = styled.main`
   padding: 60px 0 0;
+`
+
+const Nav = styled.div`
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background: #161616;
+  &>p {
+    width: 1136px;
+    margin: 0 auto;
+    color: #fff;
+  }
+  a{ color: #fff; }
 `
 
 const Loading = styled.div`
@@ -47,11 +64,22 @@ const Loading = styled.div`
   margin: 0 auto;
 `
 
+const BannerContainer = styled.div`
+	width: 100%;
+  background: url('/static/20210625/case-banner.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 50vh;
+  display: flex; flex-flow: row nowrap; align-items: center; justify-content: center;
+`
+
 const Detail: React.FC <{data: {content: string, title: string, created_at: string}}> = (props: {data: {content: string, title: string, created_at: string}}) => {
   const router = useRouter()
   return (
     <React.Fragment>
       <Header noColorChange />
+      <BannerContainer><img src='/static/20210625/case-banner-title.png' /></BannerContainer>
+      <Nav><p><Link href='/'>首页</Link> {'>'} <Link href='/case'>案例中心</Link></p></Nav>
       <StyledMain>
         <StyledContent>
           <StyledSection>

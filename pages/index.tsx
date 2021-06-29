@@ -9,6 +9,7 @@ import NewsList from '../components/NewsList'
 import { INDEX_DESCRIPTIONS, CASE, NEWS } from '../shared/config'
 import { KV_IMAGES } from '../shared/config'
 import { queryCase, queryNews } from '../api/article'
+import Link from 'next/link'
 
 const StyledContent = styled.div`
 	width: 1136px;
@@ -41,6 +42,53 @@ const StyledDescription = styled.div`
   }
 `
 
+const Row = styled.div`
+  width: 100%; display: flex; flex-flow: row nowrap; align-items: flex-start; justify-content: flex-start; margin: 0 auto;
+`
+const Col = styled.div`
+  display: inline-flex; flex-flow: column nowrap; align-items: left; justify-content: center; 
+  p{ text-align: center; line-height: 2; }
+  a{ color: #dedede; }
+  a:hover{ color: #ee7500!important; }
+`;
+const ImageContainer = styled.div`
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease 0s, box-shadow 0.5s ease 0s;
+  }
+  img:hover {
+    transform: scale(1.15);
+    box-shadow: rgba(0, 0, 0, 0.637) 0 0 20px 0px;
+  }
+`
+
+// const SectionTitle = styled.h1`
+//   margin: 0; padding: 0; font-size: 32px; color: #aa5600; font-weight: bold; position: relative; padding-bottom: 10px;
+//   &::before{ content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background: #757575; }
+// `;
+// const SectionDesc = styled.div`
+//   color: #fff;
+//   p{ margin-top: 20px; text-align: left; line-height: 3; }
+// `
+
+const SectionTitle = styled.h1`
+  margin: 0; padding: 0; font-size: 32px; color: #fff; font-weight: bold; position: relative; padding-bottom: 10px;
+`;
+const SectionDesc = styled.div`
+  color: #ccc; font-size: 16px;
+  width: 80%;
+  p{ margin-top: 32px; text-align: left; line-height: 2.25; }
+`
+
+const Nowrap = styled.span`
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+`
+
 class App extends React.Component <{case: any, news: any}> {
 	public static propTypes = {};
   render(): React.ReactElement {
@@ -49,7 +97,32 @@ class App extends React.Component <{case: any, news: any}> {
 				<Header />
 				<main>
 					<Kv data={KV_IMAGES} shadow with_arrow />
-					<StyledContent>
+          <div style={{ background: 'url("/static/20210625/intro-bg.jpg") no-repeat', backgroundSize: 'cover', }}>
+            <Row style={{minWidth: 1200, width: '80%', padding: '30px 0', margin: '0 auto'}}>
+              <Col style={{ lineHeight: 0, flex: 1, }} ><img src='/static/20210625/about-intro.jpg' style={{ height: 560, }} /></Col>
+              <Col style={{ marginLeft: 60, flex: 1,}}>
+                <SectionTitle>品牌介绍</SectionTitle>
+                <SectionDesc>
+                  <p>智博士隐形车衣（漆面保护膜）由中国科学院高分子材料团队联合多院所共同研发。中科新材具有超过20年高分子薄膜领域技术积累，上百项新材料技术专利，国际领先的车衣研发水平，铸就智博士傲绝群雄的过硬质量。</p>
+                  <p>智博士隐形车衣采用进口旗舰品牌同款TPU原料，中科鼎力打造，相比于国外进口品牌，具有超强的耐候性、耐磨性、耐污性、超高的亮度、超强的划痕自修复功能、具有全新科技生产工艺。</p>
+                  <p>智博士隐形车衣，掌握核心科技，让您放心驾驶、安心停靠、省心保值。</p>
+                </SectionDesc>
+              </Col>
+            </Row>
+            {/* <Row style={{minWidth: 1200, width: '80%', padding: '30px 0', margin: '0 auto'}}>
+              <Col style={{ lineHeight: 0, flex: 1, }} ><img src='/static/20210625/intro.jpg' style={{ height: 560, }} /></Col>
+              <Col style={{ marginLeft: 20, flex: 1,}}>
+                <SectionTitle>DRZ智博士</SectionTitle>
+                <SectionDesc>
+                  <p>智博士隐形车衣（漆面保护膜）由中国科学院高分子材料团队联合多院所共同研发。中科新材具有超过20年高分子薄膜领域技术积累，上百项新材料技术专利，国际领先的车衣研发水平，铸就智博士傲绝群雄的过硬质量。</p>
+                  <p>智博士隐形车衣采用进口旗舰品牌同款TPU原料，中科鼎力打造，相比于国外进口品牌，具有超强的耐候性、耐磨性、耐污性、超高的亮度、超强的划痕自修复功能、具有全新科技生产工艺。</p>
+                  <p>智博士隐形车衣，掌握核心科技，让您放心驾驶、安心停靠、省心保值。</p>
+                  <p>智博士隐形车衣，中国高科技车衣第一品牌, 为您带来超凡体验。</p>
+                </SectionDesc>
+              </Col>
+            </Row> */}
+          </div>
+					{/* <StyledContent>
             <StyledSection>
               <StyledDescription>
                 <div>
@@ -72,16 +145,45 @@ class App extends React.Component <{case: any, news: any}> {
                 </div>
               </StyledDescription>
             </StyledSection>
+          </StyledContent> */}
+          <div><img src='/static/20210625/brand.jpg' style={{width: '100%', }} /></div>
+          <div><img src='/static/20210625/youshi.jpg' style={{width: '100%', }} /></div>
+          <StyledContent>
             <StyledSection>
               <IndexLable title={CASE.cn} en_title={CASE.en} allHref="/case">
-                <CoverList data = {this.props.case}></CoverList>
+                <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-between', alignItems: 'center', }}>
+                  {this.props.case.map(item =>  (
+                    <Col key={item.id} style={{ width: 'calc(33.33% - 10 / 3 * 1px)', height: '220px', overflow: 'hidden', position: 'relative', marginTop: 5, }}>
+                      <ImageContainer>
+                        <Link href={item.href}>
+                          <a>
+                            <img src={item.src} />
+                          </a>
+                        </Link>
+                      </ImageContainer>
+                    </Col>
+                  ))}
+                </div>
               </IndexLable>
             </StyledSection>
             <StyledSection>
               <IndexLable title={NEWS.cn} en_title={NEWS.en} allHref="/news">
-                <NewsList data = {this.props.news}></NewsList>
+                <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-between', alignItems: 'center', }}>
+                  {this.props.news.map(item =>  (
+                    <Col key={item.id} style={{ width: '47.5%', whiteSpace: 'nowrap', }}>
+                      <Link href={item.href}><a>
+                        <Row style={{ justifyContent: 'space-between', borderBottom: '1px dotted #dedede', lineHeight: 3, }}>
+                          <Nowrap>{item.title}</Nowrap>
+                          <span>{item.created_at}</span>
+                        </Row>
+                        </a>
+                      </Link>
+                    </Col>
+                  ))}
+                </div>
               </IndexLable>
             </StyledSection>
+            <script> AOS.init();</script>
 					</StyledContent>
 				</main>
 				<Footer />

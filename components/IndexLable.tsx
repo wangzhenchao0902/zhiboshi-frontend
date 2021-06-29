@@ -13,29 +13,34 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  padding-bottom: 7px;
+  margin: 10px 0;
+  color: #ee7500;
+  position: relative;
   &>div {
     position: relative;
-    padding: 0 0 0 14px;
+    flex: 1;
     img {
       position: absolute;
       left: -10px;
       height: 24px;
       width: 24px;
     }
-    span {
-      font-size: 22px;
-      line-height: 24px;
-      display: block;
-    }
     strong {
-      font-size: 14px;
-      display: block;
+      font-size: 24px;
+      line-height: 24px;
+      font-weight: normal;
+    }
+    span {
+      font-size: small;
+      margin-left: .5em;
     }
   }
-  &>a {
+  & a {
     display: block;
-  }
+    color: #ee7500;
+ }
+ &::before{ content: ''; position: absolute; bottom: 0; left: 0; width: 26px; height: 1px; background: #ee7500; }
 `
 
 const Body = styled.div`
@@ -46,12 +51,11 @@ const IndexLable: React.FC<LableProps> = (props: LableProps) => {
   return <>
     <Header>
       <div>
-        <img src="/static/tag.svg"></img>
-        <span>{props.title}</span>
-        <strong>{props.en_title}</strong>
+        <strong>{props.title}</strong>
+        <span>{props.en_title}</span>
       </div>
       {props.allHref && (
-        <Link href={props.allHref}>查看全部</Link>
+        <Link href={props.allHref}>更多新闻</Link>
       )}
     </Header>
     <Body>

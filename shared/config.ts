@@ -3,9 +3,9 @@ export const LOGO = '/static/logo.png'
 
 // kv images
 export const KV_IMAGES = [
-  '/static/kv-1.jpg',
-  '/static/kv-2.jpg',
-  '/static/kv-3.jpg',
+  '/static/20210625/kv-1.jpg',
+  '/static/20210625/kv-2.jpg',
+  '/static/20210625/kv-3.jpg',
 ]
 
 // banner

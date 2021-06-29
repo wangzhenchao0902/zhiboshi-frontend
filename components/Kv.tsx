@@ -3,23 +3,19 @@ import styled from 'styled-components'
 
 const KvContainer = styled.div`
   position: relative;
+  min-width: 1200px; width: 100%; }
   &:hover {
     span {
       display: flex;
     }
   }
-  /* @media screen and (max-width: 1440px) { */
-    &, div {
-      width: 100%;
-      height: 400px;
-    }
-  /* } */
+  div{ min-width: 1200px; width: 100%; padding-bottom: 50%; }
 `
 
 const KvImg = styled.div<{background_image: string, active: boolean}>`
-  background-image: url(${props => props.background_image});
+  background: url(${props => props.background_image}) no-repeat;
   background-size: cover;
-  background-position: center top;
+  background-position: center center;
   display: ${props => props.active ? 'block' : 'none'};
 `
 
@@ -30,7 +26,8 @@ const Arrow = styled.span`
   border-radius: 0px 2px 2px 0px;
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
-  top: 216px;
+  top: 50%;
+  transform: translateY(-50%);
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease-in-out 0s;

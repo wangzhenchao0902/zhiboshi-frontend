@@ -7,42 +7,43 @@ import { List, Form, Input, Button } from 'antd';
 import 'antd/dist/antd.css'
 
 const StyledContent = styled.main`
-	width: 1136px;
-	margin: 20px auto;
-  padding: 30px 0;
+	width: 100%;
+  background: url('/static/20210625/zhibao-banner.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
 `
 
 const StyledSection = styled.section`
-  margin-bottom: 30px;
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  background-color: #ffffff;
-  min-height: 500px;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
 `
 
 const FakeTitle = styled.div`
-  height: 100px;
-  width: 100%;
-  font-size: 20px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+  letter-spacing: 1em;
+  h2{ color: #ee7500; font-size: 32px; }
+  h3{ color: #ee7500; font-size: 16px; }
 `
 
 const SelectForm = styled.div`
   width: 300px;
-  margin: 0 auto;
+  margin: 30px auto;
   text-align: center;
+  label{ display: none; color: #fff!important; }
+  input{ background: transparent; border: none; border-bottom: 1px solid #666; text-align: center; box-shadow: none!important; }
+  input:focus{ border: none; border-bottom: 1px solid #ee7500; box-shadow: none; }
 `
 
 const WarrantyList = styled.div`
-  width: 500px;
+  width: 600px;
   min-height: 200px;
   margin: 0 auto;
   text-align: center;
+  color: #ee7500!important;
+  div { color: #ee7500!important; }
 `
 
 
@@ -59,7 +60,10 @@ const AntiFake: React.FC = () => {
       <Header noColorChange />
       <StyledContent>
         <StyledSection>
-          <FakeTitle>质保查询</FakeTitle>
+          <FakeTitle>
+            <h2>质保查询</h2>
+            <h3>DRZ智博士您的第一款车衣</h3>
+          </FakeTitle>
           <SelectForm>
             <Form form={form}
               onFinish={handleSearch}
@@ -67,8 +71,8 @@ const AntiFake: React.FC = () => {
               <Form.Item rules={[{ required: true, message: '请输入手机号！' }]} name='phone' label="手机号" required tooltip="请先扫码商品二维码注册后查询">
                 <Input placeholder="请输入手机号" />
               </Form.Item>
-              <Form.Item>
-                <Button type="primary" htmlType="submit">查询</Button>
+              <Form.Item style={{marginTop: 20, }}>
+                <Button type="primary" htmlType="submit" style={{ background: '#ee7500', borderColor: '#ee7500', padding: '0 2em', }}>查询</Button>
               </Form.Item>
             </Form>
           </SelectForm>
@@ -77,23 +81,23 @@ const AntiFake: React.FC = () => {
               <>
                 <List>
                   <List.Item>
-                    <div>姓名</div>
-                    <div>手机号</div>
-                    <div>质保时长</div>
-                    <div>开始时间</div>
-                    <div>结束时间</div>
+                    <div style={{ width: 100, }}>姓名</div>
+                    <div style={{ width: 100, }}>手机号</div>
+                    <div style={{ width: 80, }}>质保时长</div>
+                    <div style={{ flex: 1, }}>开始时间</div>
+                    <div style={{ flex: 1, }}>结束时间</div>
                   </List.Item>
                   {data.map(item => (
                     <List.Item key={item.id}>
-                      <div>{item.name}</div>
-                      <div>{item.phone}</div>
-                      <div>{item.year}年</div>
-                      <div>{item.start_at}</div>
-                      <div>{item.end_at}</div>
+                      <div style={{ width: 100, }}>{item.name}</div>
+                      <div style={{ width: 100, }}>{item.phone}</div>
+                      <div style={{ width: 80, }}>{item.year}年</div>
+                      <div style={{ flex: 1, }}>{item.start_at}</div>
+                      <div style={{ flex: 1, }}>{item.end_at}</div>
                     </List.Item>
                   ))}
                 </List>
-                <>售后政策：免费终身补膜 总计不超15米 </>
+                {/* <>售后政策：免费终身补膜 总计不超15米 </> */}
               </>
             )}
             {data instanceof Array && data.length === 0 && (

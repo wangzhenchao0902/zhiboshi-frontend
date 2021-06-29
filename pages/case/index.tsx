@@ -5,7 +5,6 @@ import Kv from '../../components/Kv'
 import Link from 'next/link'
 import Footer from '../../components/Footer'
 import CoverList from '../../components/CoverList'
-import { BANNERS } from '../../shared/config'
 import { queryCase } from '../../api/article'
 
 const StyledContent = styled.div`
@@ -22,12 +21,22 @@ const Nav = styled.div`
   height: 50px;
   display: flex;
   align-items: center;
-  background-color: #ffffff;
-  border-bottom: 1px solid rgb(216, 216, 216);
+  background: #161616;
   &>p {
     width: 1136px;
     margin: 0 auto;
+    color: #fff;
   }
+  a{ color: #fff; }
+`
+
+const BannerContainer = styled.div`
+	width: 100%;
+  background: url('/static/20210625/case-banner.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 50vh;
+  display: flex; flex-flow: row nowrap; align-items: center; justify-content: center;
 `
 
 const getData = async (params?: any) => {
@@ -52,11 +61,9 @@ class App extends React.Component <{data: {data: any, total: number}}> {
 		return (
 			<React.Fragment>
 				<Header />
+        <BannerContainer><img src='/static/20210625/case-banner-title.png' /></BannerContainer>
+        <Nav><p><Link href='/'>首页</Link> {'>'} 案例中心</p></Nav>
 				<main>
-					<Kv data={BANNERS} />
-          <Nav>
-            <p><Link href='/'>首页</Link> {'>'} 场景案例</p>
-          </Nav>
 					<StyledContent>
             <StyledSection>
               <CoverList paginator={

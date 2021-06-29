@@ -4,6 +4,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import Footer from '../../components/Footer'
 import { showArticle, allIds } from '../../api/article'
+import Link from 'next/link'
 import { Spin } from 'antd';
 import 'antd/dist/antd.css'
 
@@ -12,7 +13,7 @@ const StyledContent = styled.div`
 	margin: 20px auto;
   padding: 30px 0;
   min-height: 600px;
-  background-color: #ffffff;
+  // background-color: #ffffff;
 `
 
 const StyledSection = styled.section`
@@ -21,17 +22,20 @@ const StyledSection = styled.section`
 `
 
 const Title = styled.div`
-  font-size: 18px;
+  font-size: 28px;
   font-weight: bold;
   text-align: center;
   display: block;
+  line-height: 2;
+  color: #fff;
   &>p {
-    font-size: 12px;
+    font-size: 14px;
     color: #646262;
   }
 `
 const Content = styled.form`
   padding: 10px 30px 0;
+  color: #fff;
   & p:empty{ padding: .75em; }
 `
 
@@ -48,11 +52,35 @@ const Loading = styled.div`
   margin: 0 auto;
 `
 
+const Nav = styled.div`
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background: #161616;
+  &>p {
+    width: 1136px;
+    margin: 0 auto;
+    color: #fff;
+  }
+  a{ color: #838383; }
+`
+
+const BannerContainer = styled.div`
+	width: 100%;
+  background: url('/static/20210625/news-banner.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 50vh;
+  display: flex; flex-flow: row nowrap; align-items: center; justify-content: center;
+`
+
 const Detail: React.FC <{data: {content: string, title: string, created_at: string}}> = (props: {data: {content: string, title: string, created_at: string}}) => {
   const router = useRouter()
   return (
     <React.Fragment>
       <Header noColorChange />
+      <BannerContainer><img src='/static/20210625/news-banner-title.png' /></BannerContainer>
+      <Nav><p><Link href='/'>首页</Link> {'>'} <Link href='/news'>新闻中心</Link></p></Nav>
       <StyledMain>
         <StyledContent>
           <StyledSection>

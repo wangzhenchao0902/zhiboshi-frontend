@@ -13,7 +13,12 @@ const Div = styled.div`
 const Header = styled.div`
   font-size: 18px;
   text-align: center;
-  margin-top: 30px;
+  padding-top: 30px;
+`
+
+const Container = styled.div`
+  min-height: 100vh;
+  background: #fff;
 `
 
 const layout = {
@@ -53,72 +58,33 @@ const Register = (props: {query: {sn: string}}) => {
   };
 
   return (
-    <>
-    <Header>
-      智博士质保注册
-    </Header>
-    <Div>
-      {suc &&<Alert
-        message="注册成功"
-        description="您可到智博士官网查询质保期限。"
-        type="success"
-        showIcon
-      />
-      }
-      {!suc && <Form {...layout}
-        layout="vertical"
-        name="nest-messages"
-        onFinish={onFinish} 
-        initialValues={{sn: props.query.sn}}
-        validateMessages={validateMessages}>
-        <Form.Item
-          name="sn"
-          label="产品编号"
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Input disabled />
-        </Form.Item>
-        <Form.Item
-          name="name"
-          label="姓名"
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          name="phone"
-          label="手机号"
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          name="vin"
-          label="车架号"
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 10 }}>
-          <Button type="primary" htmlType="submit">
-            注册
-          </Button>
-        </Form.Item>
-      </Form>
+    <Container>
+      <Header>
+        智博士质保注册
+      </Header>
+      <Div>
+        {suc &&<Alert
+          message="注册成功"
+          description="您可到智博士官网查询质保期限。"
+          type="success"
+          showIcon
+        />
         }
-    </Div>
-    </>
+        {!suc && <Form {...layout}
+          layout="vertical"
+          name="nest-messages"
+          onFinish={onFinish} 
+          initialValues={{sn: props.query.sn}}
+          validateMessages={validateMessages}>
+          <Form.Item name="sn" label="产品编号" rules={[ { required: true, }, ]}><Input disabled /></Form.Item>
+          <Form.Item name="name" label="姓名" rules={[ { required: true, }, ]}><Input /></Form.Item>
+          <Form.Item name="phone" label="手机号" rules={[ { required: true, }, ]}><Input /></Form.Item>
+          <Form.Item name="vin" label="车架号"><Input /></Form.Item>
+          <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 10 }}><Button type="primary" htmlType="submit">注册</Button></Form.Item>
+        </Form>
+          }
+      </Div>
+    </Container>
   );
 };
 

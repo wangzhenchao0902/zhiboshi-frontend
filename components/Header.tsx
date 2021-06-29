@@ -5,80 +5,64 @@ import { withRouter } from 'next/router'
 import { LINK_ROUTERS } from '../shared/router'
 import { LOGO } from '../shared/config'
 
-const height = 56;
-
 const StyledHeader = styled.header<{nTop: boolean}>`
-  position: fixed;
+  position: sticky;
   z-index: 1000;
   top: 0;
   width: 100%;
-  min-width: 1280px;
-  height: ${height}px;
-  ${props => !props.nTop &&
-  css`
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(40, 40, 39, 0) 100%);
-    a {
-      color: rgb(255, 255, 255);
-    }
-  `}
-  ${props => props.nTop &&
-  css`
-    box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 12px 0px;
-    nav {
-      background-color: rgb(255, 255, 255);
-    }
-  `}
+  min-width: 1200px;
+  background-color: #000;
+  border-bottom: 1px solid #666;
 `
 
 const Nav = styled.nav`
-  height: ${height}px;
   transition: background-color 0.4s ease 0s;
+  display: flex; flex-flow: row nowrap; align-items: center; justify-content: space-between;
+  min-width: 1200px;
+  width: 80%;
+  margin: 0 auto;
+`
+
+const NavList = styled.div`
   display: flex;
   justify-content: center;
   a {
-    margin: 0 20px;
+    margin: 0 40px;
     font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     position: relative;
-    &:hover {
+    color: #fff;
+    &:hover{
+      color: #aa5600;
       &::after {
-          content: '';
-          background-color: rgb(236, 184, 179);
-          height: 3px;
-          width: 100%;
-          position: absolute;
-          bottom: 0;
-        }
+        content: '';
+        height: 3px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: rgb(236, 184, 179);
+      }
     }
   }
+  a + a::before{ content: ''; position: absolute; left: -2em; top: 50%; transform: translateY(-50%); width: 1px; background: #aa5600; height: 12px; }
 `
 
-const LogoDiv = styled.div`
-  width: 200px;
-  height: ${height}px;
-  position: absolute;
-  padding: 10px 32px;
-  box-sizing:border-box;
-  left: 0;
-`
-
-const Logo = styled.img`
-  width: ${height}px;
-  height: 36px;
+const IconGroup = styled.div`
+  display: flex; flex-flow: row nowrap; align-items: center; justify-content: center;
 `
 
 const StyledLink = styled.a<{selected:boolean}>`
   ${props => props.selected &&
       css`
+        color: #ea4335!important;
         &::after {
           content: '';
-          background-color: rgb(234, 67, 53) !important;
+          background-color: #ea4335!important;
           height: 3px;
           width: 100%;
           position: absolute;
           bottom: 0;
+          left: 0;
         }
       `
     };
@@ -119,14 +103,18 @@ class Header extends React.Component<{noColorChange?: boolean, router: {pathname
     return (
       <StyledHeader nTop = {this.state.nTop}>
         <Nav>
-          <LogoDiv>
-            <Logo src={LOGO}></Logo>
-          </LogoDiv>
-          {LINK_ROUTERS.map((item) => (
-            <Link href={item.path} key={item.key}>
-              <StyledLink selected={item.key == this.state.key}>{item.name}</StyledLink>
-            </Link>
-          ))}
+          <div><a href='/'><img src='/static/20210625/logo.png' style={{ width: 200, margin: '20px 10px', }} /></a></div>
+          <NavList>
+            {LINK_ROUTERS.map((item) => (
+              <Link href={item.path} key={item.key} >
+                <StyledLink selected={item.key == this.state.key}>{item.name}</StyledLink>
+              </Link>
+            ))}
+          </NavList>
+          <IconGroup>
+            <a rel='nofollow' target="_blank" href='https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.1.466d14aeYKazSs&id=637914810177&skuId=4596575237340&user_id=2208842654796&cat_id=2&is_b=1&rn=c3a223361040bae8f1becf47b8e8bb80'><img style={{ width: 28, }} src='/static/20210625/tmall.png' /></a>
+            <a rel='nofollow' target="_blank" href='https://item.jd.com/10030890973547.html'><img style={{ width: 28, marginLeft: 8, }} src='/static/20210625/jd.png' /></a>
+          </IconGroup>
         </Nav>
       </StyledHeader>
     )

@@ -5,21 +5,9 @@ export const LINK_ROUTERS = [
     path: '/',
     key: 'index',
   },
-  {
-    name: '新闻中心',
-    path: '/news',
-    key: 'news'
-  },
-  {
-    name: '质保系统',
-    path: '/anti-fake',
-    key: 'fake'
-  },
-  {
-    name: '场景案例',
-    path: '/case',
-    key: 'case'
-  },
+  { name: '案例中心', path: '/case', key: 'case' },
+  { name: '新闻中心', path: '/news', key: 'news' },
+  { name: '质保查询', path: '/anti-fake', key: 'fake' },
   {
     name: '关于我们',
     path: '/about',

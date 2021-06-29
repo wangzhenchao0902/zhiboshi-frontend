@@ -2,52 +2,52 @@ import Header from '../components/Header'
 import styled, { css } from 'styled-components'
 import React, { useState } from 'react'
 import Footer from '../components/Footer'
+import Kv from '../components/Kv'
 import { showAbout } from '../api/article'
+import Link from 'next/link'
 import { List } from 'antd';
 import 'antd/dist/antd.css'
 
-const StyledContent = styled.div`
-	width: 1136px;
-	margin: 20px auto;
-  padding: 30px 0;
-`
 
-const StyledSection = styled.section`
-  margin-bottom: 30px;
+const Nav = styled.div`
+  height: 50px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  background: #161616;
+  &>p {
+    width: 1136px;
+    margin: 0 auto;
+    color: #fff;
+  }
+  a{ color: #838383; }
 `
 
-const Content = styled.form`
-  padding: 10px 30px 0;
+const Row = styled.div`
+  width: 100%; display: flex; flex-flow: row nowrap; align-items: flex-start; justify-content: flex-start; margin: 0 auto;
+`
+const Col = styled.div`
+  display: inline-flex; flex-flow: column nowrap; align-items: left; justify-content: center; 
+  p{ text-align: center; line-height: 2; }
+  a{ color: #dedede; }
+  a:hover{ color: #ee7500!important; }
+`;
+
+const SectionTitle = styled.h1`
+  margin: 0; padding: 0; font-size: 32px; color: #fff; font-weight: bold; position: relative; padding-bottom: 10px;
+`;
+const SectionDesc = styled.div`
+  color: #ccc; font-size: 16px;
+  width: 80%;
+  p{ margin-top: 32px; text-align: left; line-height: 2.25; }
 `
 
-const StyledMain = styled.main`
-  padding: 60px 0 0;
-`
-
-const Left = styled.div`
-  width: 180px;
-  height: 100%;
-  padding: 30px 0;
-  background: #ffffff;
-`
-
-const Lis = styled(List.Item)<{active: string}>`
-  ${props => props.active &&
-  css`
-      background-color: rgb(234, 67, 53);
-      color: #ffffff;
-  `}
-  justify-content: center;
-  cursor: pointer;
-`
-
-const Right = styled.div`
-  width: 928px;
-  height: 100%;
-  background: #ffffff;
-  min-height: 600px;
+const BannerContainer = styled.div`
+	width: 100%;
+  background: url('/static/20210625/about-banner.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 50vh;
+  display: flex; flex-flow: row nowrap; align-items: center; justify-content: center;
 `
 
 const Detail: React.FC <{data: {content: string, title: string, created_at: string}}> = (props: {data: {content: string, title: string, created_at: string}}) => {
@@ -61,25 +61,26 @@ const Detail: React.FC <{data: {content: string, title: string, created_at: stri
   return (
     <React.Fragment>
       <Header noColorChange />
-      <StyledMain>
-        <StyledContent>
-          <StyledSection>
-            <Left>
-            <List>
-              <Lis active={selectItem === 'about' ? 'true': undefined} onClick={() => HandleChange('about')}>
-                关于我们
-              </Lis>
-              <Lis active={selectItem === 'contact' ? 'true': undefined}  onClick={() => HandleChange('contact')}>
-                联系我们
-              </Lis>
-              </List>
-            </Left>
-            <Right>
-              <Content dangerouslySetInnerHTML={{__html: data.content}}></Content>
-            </Right>
-          </StyledSection>
-        </StyledContent>
-      </StyledMain>
+      <BannerContainer><img src='/static/20210625/about-banner-title.png' /></BannerContainer>
+      <Nav><p><Link href='/'>首页</Link> {'>'} 关于我们</p></Nav>
+      <div><img src='/static/20210625/data.jpg' style={{width: '100%', }} /></div>
+      <div style={{ background: 'url("/static/20210625/about-bg.jpg") no-repeat', backgroundSize: 'cover', padding: '30px 30px 100px', }}>
+        <Row style={{minWidth: 1200, width: '80%', padding: '30px 0', margin: '0 auto'}}>
+          <Col style={{ lineHeight: 0, flex: 1, }} ><img src='/static/20210625/about-intro.jpg' style={{ height: 560, }} /></Col>
+          <Col style={{ marginLeft: 60, flex: 1,}}>
+            <SectionTitle>品牌介绍</SectionTitle>
+            <SectionDesc>
+              <p>智博士隐形车衣（漆面保护膜）由中国科学院高分子材料团队联合多院所共同研发。中科新材具有超过20年高分子薄膜领域技术积累，上百项新材料技术专利，国际领先的车衣研发水平，铸就智博士傲绝群雄的过硬质量。</p>
+              <p>智博士隐形车衣采用进口旗舰品牌同款TPU原料，中科鼎力打造，相比于国外进口品牌，具有超强的耐候性、耐磨性、耐污性、超高的亮度、超强的划痕自修复功能、具有全新科技生产工艺。</p>
+              <p>智博士隐形车衣，掌握核心科技，让您放心驾驶、安心停靠、省心保值。</p>
+            </SectionDesc>
+          </Col>
+        </Row>
+        <div><img src='/static/20210625/about-brand.png' style={{height: 560, margin: '50px auto 0', display: 'block', }} /></div>
+        <div><img src='/static/20210625/about-team.png' style={{height: 175, margin: '50px auto 0', display: 'block', }} /></div>
+      </div>
+      <div><img src='/static/20210625/brand.jpg' style={{width: '100%', }} /></div>
+      <div><img src='/static/20210625/youshi.jpg' style={{width: '100%', }} /></div>
       <Footer />
     </React.Fragment>
   )
