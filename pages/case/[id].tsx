@@ -23,19 +23,22 @@ const StyledSection = styled.section`
 `
 
 const Title = styled.div`
-  font-size: 18px;
+  font-size: 28px;
   font-weight: bold;
   text-align: center;
   display: block;
+  line-height: 2;
   color: #fff;
   &>p {
-    font-size: 12px;
+    font-size: 14px;
     color: #646262;
   }
 `
 const Content = styled.form`
   padding: 10px 30px 0;
   color: #fff;
+  & p:empty{ padding: .75em; }
+  img{ max-width: 100%; }
 `
 
 const StyledMain = styled.main`

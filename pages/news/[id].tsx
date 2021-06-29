@@ -37,6 +37,7 @@ const Content = styled.form`
   padding: 10px 30px 0;
   color: #fff;
   & p:empty{ padding: .75em; }
+  img{ max-width: 100%; }
 `
 
 const StyledMain = styled.main`
