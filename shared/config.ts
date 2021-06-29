@@ -3,7 +3,7 @@ export const LOGO = '/static/logo.png'
 
 // kv images
 export const KV_IMAGES = [
-  '/static/20210625/kv-1.jpg',
+  '/static/20210625/kv-1.1.jpg',
   '/static/20210625/kv-2.jpg',
   '/static/20210625/kv-3.jpg',
 ]
