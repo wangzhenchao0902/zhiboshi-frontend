@@ -96,7 +96,7 @@ class App extends React.Component <{case: any, news: any}> {
 			<React.Fragment>
 				<Header />
 				<main>
-					<Kv data={KV_IMAGES} shadow with_arrow />
+					<Kv data={KV_IMAGES} with_arrow />
           <div style={{ background: 'url("/static/20210625/intro-bg.jpg") no-repeat', backgroundSize: 'cover', }}>
             <Row style={{minWidth: 1200, width: '80%', padding: '30px 0', margin: '0 auto'}}>
               <Col style={{ lineHeight: 0, flex: 1, }} ><img src='/static/20210625/about-intro.jpg' style={{ height: 560, }} /></Col>
