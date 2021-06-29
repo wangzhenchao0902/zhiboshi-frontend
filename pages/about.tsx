@@ -63,7 +63,7 @@ const Detail: React.FC <{data: {content: string, title: string, created_at: stri
       <Header noColorChange />
       <BannerContainer><img src='/static/20210625/about-banner-title.png' /></BannerContainer>
       <Nav><p><Link href='/'>首页</Link> {'>'} 关于我们</p></Nav>
-      <div><img src='/static/20210625/data.jpg' style={{width: '100%', }} /></div>
+      <div><img src='/static/20210625/data.1.jpg' style={{width: '100%', }} /></div>
       <div style={{ background: 'url("/static/20210625/about-bg.jpg") no-repeat', backgroundSize: 'cover', padding: '30px 30px 100px', }}>
         <Row style={{minWidth: 1200, width: '80%', padding: '30px 0', margin: '0 auto'}}>
           <Col style={{ lineHeight: 0, flex: 1, }} ><img src='/static/20210625/about-intro.jpg' style={{ height: 560, }} /></Col>
