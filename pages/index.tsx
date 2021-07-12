@@ -195,7 +195,7 @@ class App extends React.Component <{case: any, news: any}> {
 export default App
 
 const getIndexCase = async () => {
-  const res = await queryCase({recommend: 1, per_page: 6});
+  const res = await queryCase({ recommend: 1, per_page: 6});
   const json = await res.json()
   const datas = [];
   if (json.result) {
@@ -210,7 +210,7 @@ const getIndexCase = async () => {
 
 const getIndexNews = async () => {
   // const res = await queryNews({recommend: 1, per_page: 9});
-  const res = await queryNews({ per_page: 9});
+  const res = await queryNews({ recommend: 1, per_page: 10});
   const json = await res.json()
   const datas = [];
   if (json.result) {
