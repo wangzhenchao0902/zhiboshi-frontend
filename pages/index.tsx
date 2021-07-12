@@ -219,7 +219,7 @@ const getIndexNews = async () => {
     });
   }
 	return {
-			data: datas
+			data: datas.sort((a, b) => b.order_number - a.order_number)
 	}
 }
 
