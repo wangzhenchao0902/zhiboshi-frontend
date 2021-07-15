@@ -69,7 +69,7 @@ const AntiFake: React.FC = () => {
               onFinish={handleSearch}
               layout="vertical">
               <Form.Item rules={[{ required: true, message: '请输入手机号！' }]} name='phone' label="手机号" required tooltip="请先扫码商品二维码注册后查询">
-                <Input placeholder="请输入手机号" />
+                <Input style={{ color: 'rgb(238, 117, 0)!important', }} placeholder="请输入手机号" />
               </Form.Item>
               <Form.Item style={{marginTop: 20, }}>
                 <Button type="primary" htmlType="submit" style={{ background: '#ee7500', borderColor: '#ee7500', padding: '0 2em', }}>查询</Button>
