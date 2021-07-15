@@ -97,7 +97,9 @@ const AntiFake: React.FC = () => {
                     </List.Item>
                   ))}
                 </List>
-                {/* <>售后政策：免费终身补膜 总计不超15米 </> */}
+                {data[0].complimentary === 1 && (
+                  <>售后政策：质保期内 意外剐蹭局部免费补膜，总计不超15米 </>
+                )}
               </>
             )}
             {data instanceof Array && data.length === 0 && (
