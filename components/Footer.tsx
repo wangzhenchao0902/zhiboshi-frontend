@@ -73,7 +73,7 @@ class Footer extends React.Component {
                 <p><a href='javascript:;'>售后政策</a></p>
               </Col>
             </Row>
-            <Row style={{ textAlign: 'right', fontSize: '32px', color: '#000', marginRight: '30px', letterSpacing: '2px', lineHeight: 1.75, justifyContent: 'flex-end', }}>400-609-9891</Row>
+            <Row style={{ textAlign: 'right', fontSize: '32px', color: '#000', paddingRight: '30px', letterSpacing: '2px', lineHeight: 1.75, justifyContent: 'flex-end', }}>400-609-9891</Row>
           </Col>
         </Row>
         <Row style={{ width: '80%', minWidth: 1200, padding: '0 20px 10px', alignItems: 'center', justifyContent: 'space-between', }}>
