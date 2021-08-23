@@ -53,7 +53,7 @@ class Footer extends React.Component {
             <Row>
               <Col>
                 <p><strong>购买渠道</strong></p>
-                <p><a rel='nofollow' href='https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.1.466d14aeYKazSs&id=637914810177&skuId=4596575237340&user_id=2208842654796&cat_id=2&is_b=1&rn=c3a223361040bae8f1becf47b8e8bb80' target="_blank">天猫商城</a></p>
+                <p><a rel='nofollow' href='https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.1.59f01452wuFVEA&id=646048752708&skuId=4657650336178&areaId=130900&user_id=2211831107054&cat_id=2&is_b=1&rn=d004edc98e5bdd83e8674d075e299fb6' target="_blank">天猫商城</a></p>
                 <p><a rel='nofollow' href='https://item.jd.com/10030890973547.html' target="_blank">京东商城</a></p>
               </Col>
               <Col>
