@@ -60,7 +60,7 @@ const AntiFake: React.FC = () => {
       <Header noColorChange />
       <StyledContent>
         <StyledSection>
-          <FakeTitle>
+          <FakeTitle style={{ marginTop: 40, }}>
             <h2>质保查询</h2>
             <h3>DRZ智博士您的第一款车衣</h3>
           </FakeTitle>
@@ -100,6 +100,7 @@ const AntiFake: React.FC = () => {
                 {data[0].complimentary === 1 && (
                   <>售后政策：质保期内 意外剐蹭局部免费补膜，总计不超15米 </>
                 )}
+                <><img src='/static/20210625/qa.png' style={{ width: 600, margin: '24px auto' }} /></>
               </>
             )}
             {data instanceof Array && data.length === 0 && (
