@@ -31,7 +31,11 @@ const getIndexNews = async () => {
 	}
 }
 
-class App extends React.Component <{data: {data: any, total: number}, news: any, isWeb: boolean}> {
+interface isState {
+  isWeb: boolean,
+}
+
+class App extends React.Component <{data: {data: any, total: number}}, isState> {
   constructor(props: any) {
     super(props)
     this.state = {

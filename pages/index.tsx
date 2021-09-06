@@ -37,7 +37,11 @@ const SectionDesc = styled.div`
   p{ margin-top: 32px; text-align: left; line-height: 2.25; }
 `
 
-class App extends React.Component <{case: any, news: any}> {
+interface isState {
+  isWeb: boolean,
+}
+
+class App extends React.Component <{case: any, news: any}, isState> {
 	public static propTypes = {};
   constructor(props: any) {
     super(props)

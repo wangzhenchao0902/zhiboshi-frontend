@@ -22,7 +22,11 @@ const getData = async (params?: any) => {
 	}
 }
 
-class App extends React.Component <{data: {data: any, total: number}, isWeb: boolean}> {
+interface isState {
+  isWeb: boolean,
+}
+
+class App extends React.Component <{data: {data: any, total: number}}, isState> {
   constructor(props: any) {
     super(props)
     this.state = {
