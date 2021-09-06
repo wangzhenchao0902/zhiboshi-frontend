@@ -128,21 +128,21 @@ class Footer extends React.Component<any, isState> {
               <p>拥有线上线下多家直营旗舰店和授权店,配备了专业的技术团队和服务顾问，可为您提供专业且优质的选膜贴膜服务。</p>
 
               <h4>购买渠道</h4>
-              <p><a rel='nofollow' href='https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.1.59f01452wuFVEA&id=646048752708&skuId=4657650336178&areaId=130900&user_id=2211831107054&cat_id=2&is_b=1&rn=d004edc98e5bdd83e8674d075e299fb6' target="_blank">>天猫智博士旗舰店</a></p>
-              <p><a rel='nofollow' href='https://item.jd.com/10030890973547.html' target="_blank">>京东智博士车品旗舰店</a></p>
+              <p><a rel='nofollow' href='https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.1.59f01452wuFVEA&id=646048752708&skuId=4657650336178&areaId=130900&user_id=2211831107054&cat_id=2&is_b=1&rn=d004edc98e5bdd83e8674d075e299fb6' target="_blank">&gt;天猫智博士旗舰店</a></p>
+              <p><a rel='nofollow' href='https://item.jd.com/10030890973547.html' target="_blank">&gt;京东智博士车品旗舰店</a></p>
 
               <h4>关于我们</h4>
-              <p><a href='/about'>>关于智博士</a></p>
-              <p><a href='/about'>>联系我们</a></p>
+              <p><a href='/about'>&gt;关于智博士</a></p>
+              <p><a href='/about'>&gt;联系我们</a></p>
 
               <h4>关注我们</h4>
-              <p><a href='http://weixin.qq.com/r/OBOSil3EkgDtrRnp90Yq'>>官网微信</a></p>
-              <p><a href='https://m.weibo.cn/u/7608507927'>>官方微博</a></p>
+              <p><a href='http://weixin.qq.com/r/OBOSil3EkgDtrRnp90Yq'>&gt;官网微信</a></p>
+              <p><a href='https://m.weibo.cn/u/7608507927'>&gt;官方微博</a></p>
 
               <h4>服务支持</h4>
-              <p><a href='javascript:;'>>常见问题</a></p>
-              <p><a href='javascript:;'>>网站地图</a></p>
-              <p><a href='javascript:;'>>售后政策</a></p>
+              <p><a href='javascript:;'>&gt;常见问题</a></p>
+              <p><a href='javascript:;'>&gt;网站地图</a></p>
+              <p><a href='javascript:;'>&gt;售后政策</a></p>
 
               <Row style={{ marginTop: 20, textAlign: 'center', }}>
                 <Col>
