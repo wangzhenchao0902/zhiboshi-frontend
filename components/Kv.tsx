@@ -3,13 +3,24 @@ import styled from 'styled-components'
 
 const KvContainer = styled.div`
   position: relative;
-  min-width: 1200px; width: 100%; }
+  min-width: 1200px; width: 100%;
   &:hover {
     span {
       display: flex;
     }
   }
   div{ min-width: 1200px; width: 100%; padding-bottom: 50%; }
+`
+
+const KvMContainer = styled.div`
+  position: relative;
+  width: 100%;
+  &:hover {
+    span {
+      display: flex;
+    }
+  }
+  div{ width: 100%; padding-bottom: 150%; }
 `
 
 const KvImg = styled.div<{background_image: string, active: boolean}>`
@@ -52,17 +63,21 @@ const Shadow = styled.span`
   background-image: linear-gradient(rgba(239, 244, 245, 0) 0%, rgba(239, 244, 245, 0.5) 41%, rgb(239, 244, 245) 100%);
 `
 
-class Kv extends React.Component<{data: Array<string>, with_arrow?: boolean, shadow?: boolean}, {kv_active: number, kv_auto_change_interval_id: number}> {
+class Kv extends React.Component<{data: Array<string>, with_arrow?: boolean, shadow?: boolean}, {kv_active: number, kv_auto_change_interval_id: number, isWeb: boolean}> {
   constructor(props: any) {
     super(props)
     this.state = {
       kv_active: 0,
-      kv_auto_change_interval_id: 0
+      kv_auto_change_interval_id: 0,
+      isWeb: true,
     }
   }
 
   goToNextKv = (increment: number, reset_interval: boolean) => {
-    const len = this.props.data.length
+    let len = this.props.data.length
+    if(!this.state.isWeb) {
+      len = 2
+    }
     this.setState((state) => {
       const next_index = state.kv_active + increment
       return {
@@ -76,7 +91,7 @@ class Kv extends React.Component<{data: Array<string>, with_arrow?: boolean, sha
   }
 
   autoChangeKv = () => {
-    const interval_id = setInterval(() => this.goToNextKv(1, false), 10000)
+    const interval_id = setInterval(() => this.goToNextKv(1, false), this.state.isWeb ? 1000 * 10 : 1000 * 3)
     this.setState({kv_auto_change_interval_id: interval_id})
   }
 
@@ -91,6 +106,7 @@ class Kv extends React.Component<{data: Array<string>, with_arrow?: boolean, sha
 
   componentDidMount() {
     this.autoChangeKv()
+    this.setState({ isWeb: window.innerWidth > 500, });
   }
 
   componentWillUnmount() {
@@ -99,22 +115,35 @@ class Kv extends React.Component<{data: Array<string>, with_arrow?: boolean, sha
 
   render() {
     return (
-      <KvContainer>
-        {this.props.data.map((kv, index) => (
-          <KvImg active={this.state.kv_active == index} background_image={kv} key={index}></KvImg>
-        ))}
-        {this.props.shadow && (<Shadow />)}
-        {this.props.with_arrow && 
-          <React.Fragment>
-            <ArrowPrev onClick={() => this.goToNextKv(-1, true)}>
-              <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path stroke="#FFF" strokeWidth="2" d="M16 20l-8-8 8-8" fill="none" fillRule="evenodd"></path></svg>
-            </ArrowPrev>
-            <ArrowNext onClick={() => this.goToNextKv(1, true)}>
-              <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path stroke="#FFF" strokeWidth="2" d="M16 20l-8-8 8-8" fill="none" fillRule="evenodd"></path></svg>
-            </ArrowNext>
-          </React.Fragment>
+      <>
+        {
+          this.state.isWeb ?
+            <KvContainer>
+              {this.props.data.map((kv, index) => (
+                <KvImg active={this.state.kv_active == index} background_image={kv} key={index}></KvImg>
+              ))}
+              {this.props.shadow && (<Shadow />)}
+              {this.props.with_arrow && 
+                <React.Fragment>
+                  <ArrowPrev onClick={() => this.goToNextKv(-1, true)}>
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path stroke="#FFF" strokeWidth="2" d="M16 20l-8-8 8-8" fill="none" fillRule="evenodd"></path></svg>
+                  </ArrowPrev>
+                  <ArrowNext onClick={() => this.goToNextKv(1, true)}>
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path stroke="#FFF" strokeWidth="2" d="M16 20l-8-8 8-8" fill="none" fillRule="evenodd"></path></svg>
+                  </ArrowNext>
+                </React.Fragment>
+              }
+            </KvContainer>
+          :
+            <KvMContainer>
+              {
+                ['/static/m/m-poster1.jpg','/static/m/m-poster2.jpg'].map((kv, index) => (
+                  <KvImg active={this.state.kv_active == index} background_image={kv} key={index}></KvImg>
+                ))
+              }
+            </KvMContainer>
         }
-      </KvContainer>
+      </>
     )
   }
 }

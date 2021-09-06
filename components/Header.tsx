@@ -68,12 +68,14 @@ const StyledLink = styled.a<{selected:boolean}>`
     };
 `
 
-class Header extends React.Component<{noColorChange?: boolean, router: {pathname: string}}, {nTop: boolean, key: string}> {
+class Header extends React.Component<{noColorChange?: boolean, router: {pathname: string}}, {nTop: boolean, key: string, isWeb: boolean, isOpen: boolean, }> {
   constructor(props: any) {
     super(props)
     this.state = {
       key: '',
-      nTop: false || this.props.noColorChange
+      nTop: false || this.props.noColorChange,
+      isWeb: true,
+      isOpen: false,
     }
   }
 
@@ -82,7 +84,12 @@ class Header extends React.Component<{noColorChange?: boolean, router: {pathname
     this.setState({nTop: scrollTop > 0})
   }
 
+  changeOpen = (isOpen) => {
+    this.setState({ isOpen, });
+  }
+
   componentDidMount() {
+    this.setState({ isWeb: window.innerWidth > 500, });
     LINK_ROUTERS.forEach(e => {
       if (e.path == this.props.router.pathname) {
         this.setState({key: e.key})
@@ -101,23 +108,60 @@ class Header extends React.Component<{noColorChange?: boolean, router: {pathname
 
   render(): React.ReactElement {
     return (
-      <StyledHeader nTop = {this.state.nTop}>
-        <Nav>
-          <div><a href='/'><img src='/static/20210625/logo.png' style={{ width: 200, margin: '20px 10px', }} /></a></div>
-          <NavList>
-            {LINK_ROUTERS.map((item) => (
-              <Link href={item.path} key={item.key} >
-                <StyledLink selected={item.key == this.state.key}>{item.name}</StyledLink>
-              </Link>
-            ))}
-          </NavList>
-          <IconGroup>
-            <a rel='nofollow' target="_blank" href='https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.1.59f01452wuFVEA&id=646048752708&skuId=4657650336178&areaId=130900&user_id=2211831107054&cat_id=2&is_b=1&rn=d004edc98e5bdd83e8674d075e299fb6'><img style={{ width: 28, }} src='/static/20210625/tmall.png' /></a>
-            <a rel='nofollow' target="_blank" href='https://item.jd.com/10030890973547.html'><img style={{ width: 28, marginLeft: 8, }} src='/static/20210625/jd.png' /></a>
-          </IconGroup>
-        </Nav>
-      </StyledHeader>
-    )
+      <div style={{position: 'relative'}}>
+        {
+          this.state.isWeb ?
+            <StyledHeader nTop = {this.state.nTop}>
+              <Nav>
+                <div><a href='/'><img src='/static/20210625/logo.png' style={{ width: 200, margin: '20px 10px', }} /></a></div>
+                <NavList>
+                  {LINK_ROUTERS.map((item) => (
+                    <Link href={item.path} key={item.key} >
+                      <StyledLink selected={item.key == this.state.key}>{item.name}</StyledLink>
+                    </Link>
+                  ))}
+                </NavList>
+                <IconGroup>
+                  <a rel='nofollow' target="_blank" href='https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.1.59f01452wuFVEA&id=646048752708&skuId=4657650336178&areaId=130900&user_id=2211831107054&cat_id=2&is_b=1&rn=d004edc98e5bdd83e8674d075e299fb6'><img style={{ width: 28, }} src='/static/20210625/tmall.png' /></a>
+                  <a rel='nofollow' target="_blank" href='https://item.jd.com/10030890973547.html'><img style={{ width: 28, marginLeft: 8, }} src='/static/20210625/jd.png' /></a>
+                </IconGroup>
+              </Nav>
+            </StyledHeader>
+          :
+            <>
+              {
+                !this.state.isOpen ? 
+                    <div onClick={() => this.changeOpen(true)} style={{ position: 'absolute', top: 10, right: 10, zIndex: 9, }}><img src='/static/m/m-open.jpg' style={{ width: 30,}} /></div>
+                  :
+                    <>
+                      <div onClick={() => this.changeOpen(false)} style={{ position: 'fixed', top: 0, right: 0, bottom: 0, left: 0, zIndex: 1001, }}> </div>
+                      <div style={{ position: 'fixed', top: 0, right: 0, bottom: 0, width: '40%', background: '#222', padding: 10, zIndex: 10001, }}> 
+                        <div onClick={() => this.changeOpen(false)} style={{ textAlign: 'right', }}><img src='/static/m/m-close.jpg' style={{ width: 30,}} /></div>
+                        <div style={{ lineHeight: 0, marginTop: 10, }}><img src='/static/20210625/logo.png' style={{ width: '100%', }} /></div>
+                        <div style={{ padding: 10, lineHeight: 2.5, marginTop: 10, }}>
+                          {LINK_ROUTERS.map((item) => (
+                            <div>
+                              <Link href={item.path} key={item.key}>
+                                <span style={{ color: item.key === this.state.key ? '#ee7500' : '#aaa', }}>{item.name}</span>
+                              </Link>
+                            </div>
+                          ))}
+                          <div style={{ marginTop: 20, }}>
+                            <div style={{ marginTop: 0, }}>
+                              <a style={{ lineHeight: 0, }} rel='nofollow' target="_blank" href='https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.1.59f01452wuFVEA&id=646048752708&skuId=4657650336178&areaId=130900&user_id=2211831107054&cat_id=2&is_b=1&rn=d004edc98e5bdd83e8674d075e299fb6'><img style={{ width: 28, }} src='/static/20210625/tmall.png' /></a>
+                            </div>
+                            <div style={{ marginTop: 10, }}>
+                              <a style={{ lineHeight: 0, }} rel='nofollow' target="_blank" href='https://item.jd.com/10030890973547.html'><img style={{ width: 28, }} src='/static/20210625/jd.png' /></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+              }
+            </>
+        }
+      </div>
+      )
   }
 }
 

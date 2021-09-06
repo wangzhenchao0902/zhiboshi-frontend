@@ -4,17 +4,20 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { Pagination } from 'antd';
 import 'antd/dist/antd.css'
+import { Nowrap, Paginator } from '../public/styled/styled';
 
 export type CoverListProps = {
   data: Array<{
-      src: string;
-      href: string;
-      id: number;
-    }>,
+    src: string;
+    href: string;
+    id: number;
+    title: string;
+  }>,
   paginator?: {
     paginatorChange: (page: number) => Promise<{data: any, total: number}>;
     total: number;
-  }
+  },
+  isWeb: Boolean,
 }
 
 const CoverListContainer = styled.div`
@@ -38,12 +41,19 @@ const CoverListContainer = styled.div`
   }
 `
 
-const Paginator = styled.div`
-  text-align: center;
-  padding-top: 20px;
+const CoverMListContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  &>div {
+    width: calc( 50% - 5px );
+    height: 40vw;
+    margin-bottom: 40px;
+    img { width: 100%; height: 100%; object-fit: cover; }
+  }
+  & > div:nth-child(2n){ margin-left: 10px; }
+  span { color: #fff; display: block; }
 `
-
-
 const CoverList: React.FC<CoverListProps> = (props: CoverListProps) => {
 
   const [data, setData] = useState(props.data)
@@ -55,20 +65,17 @@ const CoverList: React.FC<CoverListProps> = (props: CoverListProps) => {
     setTotal(res.total);
   }
 
-  return <>
-    <CoverListContainer>
-      {data.map(item =>  (
-        <div key={item.id}>
-          <Link href={item.href}>
-            <a>
-              <img src={item.src} />
-            </a>
-          </Link>
-        </div>
-      ))}
-    </CoverListContainer>
-    {props.paginator && (<Paginator><Pagination defaultCurrent={1} onChange={HandlePaginatorChange} pageSize={9} total={total} /></Paginator>)}
-  </>
+  return (
+    <>
+      {
+        props.isWeb ?
+          <CoverListContainer>{data.map(item =>  (<div key={item.id}><Link href={item.href}><a><img src={item.src} /></a></Link></div>))}</CoverListContainer>
+        :
+          <CoverMListContainer>{data.map(item =>  (<div key={item.id}><Link href={item.href}><><a><img src={item.src} /></a><Nowrap>{item.title}</Nowrap></></Link></div>))}</CoverMListContainer>
+      }
+      {props.paginator && (<Paginator><Pagination defaultCurrent={1} onChange={HandlePaginatorChange} pageSize={9} total={total} /></Paginator>)}
+    </>
+  )
 }
 
 export default CoverList;

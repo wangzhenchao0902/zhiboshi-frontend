@@ -4,6 +4,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { Pagination } from 'antd';
 import 'antd/dist/antd.css'
+import { Paginator } from '../public/styled/styled';
 
 export type NewsListProps = {
   data: Array<{
@@ -48,11 +49,20 @@ const NewsListContainer = styled.div`
   }
 `
 
-const Paginator = styled.div`
-  text-align: center;
-  padding-top: 20px;
+const MNewsListContainer = styled.div`
+  background: #fff;
+  padding: 10px 20px;
+  a {
+    padding: 10px 0;
+    display: block;
+    line-height: 2;
+    color: #333;
+    time{ color: #000; }
+    &:hover{ color: #ee7500; }
+    &:hover time{ color: #ee7500; }
+    border-bottom: 1px dashed #ccc;
+  }
 `
-
 
 const NewsList: React.FC<NewsListProps> = (props: NewsListProps) => {
   const [data, setData] = useState(props.data)
@@ -63,25 +73,51 @@ const NewsList: React.FC<NewsListProps> = (props: NewsListProps) => {
     setTotal(res.total);
   }
 
-  return <>
-    <NewsListContainer>
-      <div>
-        <div>
-        {data.map(item =>  (
-          <div key={item.id}>
-            <Link href={item.href}>
-              <a style={{display: 'flex', flexFlow: 'row nowrap', alignItems: 'center', justifyContent: 'space-between',}}>
-                <span>{item.title}</span>
-                <time>{item.created_at}</time>
-              </a>
-            </Link>
-          </div>
-        ))}
-        </div>
-      </div>
-    </NewsListContainer>
-    {props.paginator && (<Paginator><Pagination defaultCurrent={1} onChange={HandlePaginatorChange} pageSize={10} total={total} /></Paginator>)}
-  </>
+  return (
+    <>
+      {
+        props.isWeb ?
+          <>
+            <NewsListContainer>
+              <div>
+                <div>
+                {data.map(item =>  (
+                  <div key={item.id}>
+                    <Link href={item.href}>
+                      <a style={{display: 'flex', flexFlow: 'row nowrap', alignItems: 'center', justifyContent: 'space-between',}}>
+                        <span>{item.title}</span>
+                        <time>{item.created_at}</time>
+                      </a>
+                    </Link>
+                  </div>
+                ))}
+                </div>
+              </div>
+            </NewsListContainer>
+            {props.paginator && (<Paginator><Pagination defaultCurrent={1} onChange={HandlePaginatorChange} pageSize={10} total={total} /></Paginator>)}
+          </>
+        :
+          <>
+            <MNewsListContainer>
+              <div>
+                {data.map(item =>  (
+                  <div key={item.id}>
+                    <Link href={item.href}>
+                      <a>
+                        <div>{item.title}</div>
+                        <time>{item.created_at}</time>
+                      </a>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </MNewsListContainer>
+            {props.paginator && (<Paginator style={{background: '#fff', }}><Pagination defaultCurrent={1} onChange={HandlePaginatorChange} pageSize={10} total={total} /></Paginator>)}
+          </>
+      }
+      
+    </>
+  )
 }
 
 export default NewsList;

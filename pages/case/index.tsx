@@ -1,80 +1,97 @@
 import Header from '../../components/Header'
 import styled from 'styled-components'
 import React from 'react'
-import Kv from '../../components/Kv'
 import Link from 'next/link'
 import Footer from '../../components/Footer'
 import CoverList from '../../components/CoverList'
 import { queryCase } from '../../api/article'
+import { CASE, } from '../../shared/config'
+import { Title, CaseBannerContainer, BreadcrumbNav } from '../../public/styled/styled'
 
 const StyledContent = styled.div`
 	width: 1136px;
 	margin: 0 auto;
   padding: 30px 0;
-`
-
-const StyledSection = styled.section`
-  margin-bottom: 30px;
-`
-
-const Nav = styled.div`
-  height: 50px;
-  display: flex;
-  align-items: center;
-  background: #161616;
-  &>p {
-    width: 1136px;
-    margin: 0 auto;
-    color: #fff;
-  }
-  a{ color: #fff; }
-`
-
-const BannerContainer = styled.div`
-	width: 100%;
-  background: url('/static/20210625/case-banner.jpg') no-repeat;
-  background-size: cover;
-  background-position: center center;
-  min-height: 50vh;
-  display: flex; flex-flow: row nowrap; align-items: center; justify-content: center;
+  section { margin-bottom: 30px; }
 `
 
 const getData = async (params?: any) => {
   const res = await queryCase({...params, per_page: 9});
   const json = await res.json()
-  const datas = [];
-  json.data.data.forEach((item: any) => {
-    datas.push({src: item.preview_url, href: "/case/".concat(item.id), id: item.id})
-  });
+  console.log(json);
 	return {
-      total: json.data.total,
-			data: datas
+    total: json.data.total,
+    data: json.data.data.map((item: any) => {
+      return {
+        src: item.preview_url,
+        href: `/case/${item.id}`,
+        id: item.id,
+        title: item.title,
+      }
+    }),
 	}
 }
 
-class App extends React.Component <{data: {data: any, total: number}}> {
+class App extends React.Component <{data: {data: any, total: number}, isWeb: boolean}> {
+  constructor(props: any) {
+    super(props)
+    this.state = {
+      isWeb: true,
+    }
+  }
+  
   pageChange = async (page: number): Promise<any> => {
     return getData({page});
+  }
+
+  componentDidMount() {
+    this.setState({ isWeb: window.innerWidth > 500, });
   }
 
   render(): React.ReactElement {
 		return (
 			<React.Fragment>
 				<Header />
-        <BannerContainer><img src='/static/20210625/case-banner-title.png' /></BannerContainer>
-        <Nav><p><Link href='/'>首页</Link> {'>'} 案例中心</p></Nav>
-				<main>
-					<StyledContent>
-            <StyledSection>
-              <CoverList paginator={
-                {
-                  total: this.props.data.total,
-                  paginatorChange: this.pageChange
-                }
-              } data = {this.props.data.data}></CoverList>
-            </StyledSection>
-					</StyledContent>
-				</main>
+        <>
+          {
+            this.state.isWeb ? 
+              <>
+                <CaseBannerContainer><img src='/static/20210625/case-banner-title.png' /></CaseBannerContainer>
+                <BreadcrumbNav><p><Link href='/'>首页</Link> {'>'} 案例中心</p></BreadcrumbNav>
+                <main>
+                  <StyledContent>
+                    <section>
+                      <CoverList paginator={
+                        {
+                          total: this.props.data.total,
+                          paginatorChange: this.pageChange
+                        }
+                      } data = {this.props.data.data} isWeb = {this.state.isWeb}></CoverList>
+                    </section>
+                  </StyledContent>
+                </main>
+              </>
+            :
+            <main>
+              <div style={{ lineHeight: 0, }}><img src='/static/m/m-banner-case.jpg' style={{width: '100%', }} /></div>
+              <div style={{ padding: 20, }}>
+                <Title>
+                  <div style={{ justifyContent: 'space-between', display: 'flex', flexFlow: 'row nowrap', alignItems: 'center', }}>
+                    <div style={{ whiteSpace: 'nowrap', flex: 1, }}>{CASE.cn}<span>{CASE.en}</span></div>
+                    <div><a href='/case'>全部案例</a></div>
+                  </div>
+                </Title>
+                <div style={{ marginTop: 20, }}>
+                  <CoverList
+                    paginator = {{total: this.props.data.total, paginatorChange: this.pageChange }}
+                    data = {this.props.data.data} 
+                    isWeb = {this.state.isWeb}
+                  ></CoverList>
+                </div>
+              </div>
+            </main>
+          }
+        </>
 				<Footer />
 			</React.Fragment>
 		)
@@ -83,12 +100,11 @@ class App extends React.Component <{data: {data: any, total: number}}> {
 
 export default App
 
-export async function getStaticProps(): Promise<{
-}> {
+export async function getStaticProps(): Promise<{}> {
   const res = await getData();
 	return {
 		props: {
-			data: {data: res.data, total: res.total}
+			data: {data: res.data, total: res.total, }
     },
     revalidate: 1,
 	}

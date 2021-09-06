@@ -1,100 +1,57 @@
 import Header from '../../components/Header'
-import styled from 'styled-components'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Footer from '../../components/Footer'
 import { showArticle, allIds } from '../../api/article'
 import Link from 'next/link'
 import { Spin } from 'antd';
 import 'antd/dist/antd.css'
-
-const StyledContent = styled.div`
-	width: 1136px;
-	margin: 20px auto;
-  padding: 30px 0;
-  min-height: 600px;
-  // background-color: #ffffff;
-`
-
-const StyledSection = styled.section`
-  white-space: pre-wrap;
-  margin-bottom: 30px;
-`
-
-const Title = styled.div`
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
-  display: block;
-  line-height: 2;
-  color: #fff;
-  &>p {
-    font-size: 14px;
-    color: #646262;
-  }
-`
-const Content = styled.form`
-  padding: 10px 30px 0;
-  color: #fff;
-  & p:empty{ padding: .75em; }
-  img{ max-width: 100%; }
-`
-
-const StyledMain = styled.main`
-  padding: 60px 0 0;
-`
-
-const Loading = styled.div`
-  width: 400px;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-`
-
-const Nav = styled.div`
-  height: 50px;
-  display: flex;
-  align-items: center;
-  background: #161616;
-  &>p {
-    width: 1136px;
-    margin: 0 auto;
-    color: #fff;
-  }
-  a{ color: #838383; }
-`
-
-const BannerContainer = styled.div`
-	width: 100%;
-  background: url('/static/20210625/news-banner.jpg') no-repeat;
-  background-size: cover;
-  background-position: center center;
-  min-height: 50vh;
-  display: flex; flex-flow: row nowrap; align-items: center; justify-content: center;
-`
+import { NewsBannerContainer, ArtContainer, ArtLoading, ArtTitle, ArtContent, BreadcrumbNav, } from '../../public/styled/styled'
 
 const Detail: React.FC <{data: {content: string, title: string, created_at: string}}> = (props: {data: {content: string, title: string, created_at: string}}) => {
   const router = useRouter()
+  const [isWeb, setIsWeb] = useState(true);
+  useEffect(() => {
+    setIsWeb(window.innerWidth > 500);
+  });
   return (
     <React.Fragment>
       <Header noColorChange />
-      <BannerContainer><img src='/static/20210625/news-banner-title.png' /></BannerContainer>
-      <Nav><p><Link href='/'>首页</Link> {'>'} <Link href='/news'>新闻中心</Link></p></Nav>
-      <StyledMain>
-        <StyledContent>
-          <StyledSection>
-            {router.isFallback && (<Loading><Spin size="large" /></Loading>)}
-            {!router.isFallback && (
+      <>
+          {
+            isWeb ? 
               <>
-                <Title>{props.data.title}<p>{props.data.created_at}</p></Title>
-                <Content dangerouslySetInnerHTML={{__html: props.data.content}}></Content>
+                <NewsBannerContainer><img src='/static/20210625/news-banner-title.png' /></NewsBannerContainer>
+                <BreadcrumbNav><p><Link href='/'>首页</Link> {'>'} <Link href='/news'>新闻中心</Link></p></BreadcrumbNav>
+                <ArtContainer>
+                    <section>
+                      {router.isFallback && (<ArtLoading><Spin size="large" /></ArtLoading>)}
+                      {!router.isFallback && (
+                        <>
+                          <ArtTitle>{props.data.title}<p>{props.data.created_at}</p></ArtTitle>
+                          <ArtContent dangerouslySetInnerHTML={{__html: props.data.content}}></ArtContent>
+                        </>
+                      )}
+                    </section>
+                </ArtContainer>
               </>
-            )}
-          </StyledSection>
-        </StyledContent>
-      </StyledMain>
+            :
+              <main>
+                <div style={{ lineHeight: 0, }}><img src='/static/m/m-banner-news.jpg' style={{width: '100%', }} /></div>
+                <div style={{ padding: 20, background: '#fff', }}>
+                  <section>
+                    {router.isFallback && (<ArtLoading><Spin size="large" /></ArtLoading>)}
+                    {!router.isFallback && (
+                      <>
+                        <ArtTitle style={{color: '#333',}}>{props.data.title}<p>{props.data.created_at}</p></ArtTitle>
+                        <ArtContent dangerouslySetInnerHTML={{__html: props.data.content}}></ArtContent>
+                      </>
+                    )}
+                  </section>
+                </div>
+              </main>
+          }
+        </>
       <Footer />
     </React.Fragment>
   )
