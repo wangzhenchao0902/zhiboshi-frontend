@@ -35,7 +35,7 @@ interface isState {
   isWeb: boolean,
 }
 
-class App extends React.Component <{data: {data: any, total: number}}, isState> {
+class App extends React.Component <{data: {data: any, total: number, news: any}}, isState> {
   constructor(props: any) {
     super(props)
     this.state = {
