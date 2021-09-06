@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { bool } from '_@types_prop-types@15.7.4@@types/prop-types'
 import { Row, } from '../public/styled/styled'
 
 const SytledFooter = styled.footer`
@@ -60,7 +61,11 @@ const MBNavBottom = styled.div`
   span + span{ border-left: 1px solid #333; }
 `
 
-class Footer extends React.Component {
+interface isState {
+  isWeb: boolean,
+}
+
+class Footer extends React.Component<any, isState> {
   constructor(props: any) {
     super(props)
     this.state = {
