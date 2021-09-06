@@ -1,11 +1,10 @@
-import Header from '../components/Header'
-import styled, { css } from 'styled-components'
 import React, { useState, useEffect } from 'react'
-import Footer from '../components/Footer'
-import { showAbout } from '../api/article'
+import styled from 'styled-components'
 import Link from 'next/link'
 import 'antd/dist/antd.css'
-import { Title, Nowrap, Row, Col, } from '../public/styled/styled'
+import { Header, Footer, } from '../components/'
+import { Row, Col, } from '../public/styled/styled'
+import { showAbout } from '../api/article'
 
 const Nav = styled.div`
   height: 50px;
@@ -19,6 +18,7 @@ const Nav = styled.div`
   }
   a{ color: #838383; }
 `
+
 
 const SectionTitle = styled.h1`
   margin: 0; padding: 0; font-size: 32px; color: #fff; font-weight: bold; position: relative; padding-bottom: 10px;

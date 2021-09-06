@@ -1,6 +1,5 @@
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import React from 'react'
-import { useState } from 'react'
 import styled from 'styled-components'
 import { Pagination } from 'antd';
 import 'antd/dist/antd.css'
@@ -67,6 +66,10 @@ const MNewsListContainer = styled.div`
 const NewsList: React.FC<NewsListProps> = (props: NewsListProps) => {
   const [data, setData] = useState(props.data)
   const [total, setTotal] = useState(props.paginator?.total)
+  const [isWeb, setIsWeb] = useState(true);
+  useEffect(() => {
+    setIsWeb(window.innerWidth > 500);
+  });
   const HandlePaginatorChange = async (e: number) => {
     const res = await props.paginator.paginatorChange(e);
     setData(res.data);
@@ -76,7 +79,7 @@ const NewsList: React.FC<NewsListProps> = (props: NewsListProps) => {
   return (
     <>
       {
-        props.isWeb ?
+        isWeb ?
           <>
             <NewsListContainer>
               <div>

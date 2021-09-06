@@ -1,10 +1,9 @@
-import Header from '../components/Header'
-import styled from 'styled-components'
 import React, { useState, useEffect } from 'react'
-import Footer from '../components/Footer'
+import styled from 'styled-components'
 import { queryWarranties } from '../api/warranty'
 import { List, Form, Input, Button } from 'antd';
 import 'antd/dist/antd.css'
+import { Header, Footer, } from '../components/'
 import { Row, Col, } from '../public/styled/styled'
 
 const StyledContent = styled.main`

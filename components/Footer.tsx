@@ -1,5 +1,6 @@
-import React, { memo } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import { Row, } from '../public/styled/styled'
 
 const SytledFooter = styled.footer`
   min-width: 1280px;
@@ -26,10 +27,6 @@ const Qr = styled.div`
     width: 120px;
     height: 120px;
   }
-`
-
-const Row = styled.div`
-  width: 100%; display: flex; flex-flow: row nowrap; align-items: flex-start; justify-content: flex-start; margin: 0 auto;
 `
 const Col = styled.div`
   flex: 1;
@@ -174,4 +171,4 @@ class Footer extends React.Component {
   }
 }
 
-export default memo(Footer)
+export default Footer

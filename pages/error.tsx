@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import Header from '../components/Header'
+import { Header, } from '../components/'
 
 class Err extends React.Component {
   render () {

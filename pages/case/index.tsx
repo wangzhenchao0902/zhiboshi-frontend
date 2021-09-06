@@ -1,19 +1,9 @@
-import Header from '../../components/Header'
-import styled from 'styled-components'
 import React from 'react'
 import Link from 'next/link'
-import Footer from '../../components/Footer'
-import CoverList from '../../components/CoverList'
-import { queryCase } from '../../api/article'
 import { CASE, } from '../../shared/config'
-import { Title, CaseBannerContainer, BreadcrumbNav } from '../../public/styled/styled'
-
-const StyledContent = styled.div`
-	width: 1136px;
-	margin: 0 auto;
-  padding: 30px 0;
-  section { margin-bottom: 30px; }
-`
+import { Header, Footer, CoverList, } from '../../components/'
+import { ListContainer, Title, CaseBannerContainer, CaseBreadcrumbNav } from '../../public/styled/styled'
+import { queryCase } from '../../api/article'
 
 const getData = async (params?: any) => {
   const res = await queryCase({...params, per_page: 9});
@@ -57,9 +47,9 @@ class App extends React.Component <{data: {data: any, total: number}, isWeb: boo
             this.state.isWeb ? 
               <>
                 <CaseBannerContainer><img src='/static/20210625/case-banner-title.png' /></CaseBannerContainer>
-                <BreadcrumbNav><p><Link href='/'>首页</Link> {'>'} 案例中心</p></BreadcrumbNav>
+                <CaseBreadcrumbNav><p><Link href='/'>首页</Link> {'>'} 案例中心</p></CaseBreadcrumbNav>
                 <main>
-                  <StyledContent>
+                  <ListContainer>
                     <section>
                       <CoverList paginator={
                         {
@@ -68,7 +58,7 @@ class App extends React.Component <{data: {data: any, total: number}, isWeb: boo
                         }
                       } data = {this.props.data.data} isWeb = {this.state.isWeb}></CoverList>
                     </section>
-                  </StyledContent>
+                  </ListContainer>
                 </main>
               </>
             :

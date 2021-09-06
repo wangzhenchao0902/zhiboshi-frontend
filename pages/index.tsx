@@ -1,14 +1,10 @@
-import Header from '../components/Header'
-import styled from 'styled-components'
 import React from 'react'
-import Kv from '../components/Kv'
-import Footer from '../components/Footer'
-import IndexLable from '../components/IndexLable'
-import { INDEX_DESCRIPTIONS, CASE, NEWS } from '../shared/config'
-import { KV_IMAGES } from '../shared/config'
-import { queryCase, queryNews } from '../api/article'
+import styled from 'styled-components'
 import Link from 'next/link'
+import { CASE, NEWS, KV_IMAGES } from '../shared/config'
+import { Header, Footer, Kv, IndexLable, } from '../components/'
 import { Title, Nowrap, Row, Col, } from '../public/styled/styled'
+import { queryCase, queryNews } from '../api/article'
 
 const StyledContent = styled.div`
 	width: 1136px;

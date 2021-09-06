@@ -25,6 +25,27 @@ export const Col = styled.div`
   a:hover{ color: #ee7500!important; }
 `;
 
+export const ListContainer = styled.div`
+	width: 1136px;
+	margin: 0 auto;
+  padding: 30px 0;
+  section { margin-bottom: 30px; }
+`
+
+export const Sidebar = styled.div`
+  background: #fafafa; padding: 20px;
+  width: 200px; margin-right: 20px;
+  ul, li { margin: 0; padding: 0; }
+  li{  list-style: none; text-align: center; padding: 10px; border-bottom: 1px solid #666; font-size: 18px; }
+  a { color: #666; }
+  a:hover{ color: #000; }
+`;
+
+export const HotNews = styled.div`
+  margin-top: 40px;
+  li{ line-height: 2; border-bottom: 1px dashed #666; font-size: 12px; }
+`;
+
 export const CaseBannerContainer = styled.div`
 	width: 100%; min-height: 50vh; display: flex; flex-flow: row nowrap; align-items: center; justify-content: center;
   background: url('/static/20210625/case-banner.jpg') no-repeat; background-size: cover; background-position: center center; 
@@ -37,13 +58,26 @@ export const BreadcrumbNav = styled.div`
   height: 50px;
   display: flex;
   align-items: center;
-  background: #fff;
+  background: #ccc;
   &>p {
     width: 1136px;
     margin: 0 auto;
     color: #000;
   }
   a{ color: #838383; }
+`
+
+export const CaseBreadcrumbNav = styled.div`
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background: #161616;
+  &>p {
+    width: 1136px;
+    margin: 0 auto;
+    color: #fff;
+  }
+  a{ color: #fff; }
 `
 
 export const Paginator = styled.div`

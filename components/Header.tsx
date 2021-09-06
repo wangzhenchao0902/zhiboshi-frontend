@@ -3,7 +3,6 @@ import Link from 'next/link'
 import styled, { css } from 'styled-components'
 import { withRouter } from 'next/router'
 import { LINK_ROUTERS } from '../shared/router'
-import { LOGO } from '../shared/config'
 
 const StyledHeader = styled.header<{nTop: boolean}>`
   position: sticky;

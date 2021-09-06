@@ -1,12 +1,11 @@
-import Header from '../../components/Header'
 import React, { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
-import Footer from '../../components/Footer'
-import { showArticle, allIds } from '../../api/article'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { Spin } from 'antd';
 import 'antd/dist/antd.css'
+import { Header, Footer, } from '../../components/'
 import { NewsBannerContainer, ArtContainer, ArtLoading, ArtTitle, ArtContent, BreadcrumbNav, } from '../../public/styled/styled'
+import { showArticle, allIds } from '../../api/article'
 
 const Detail: React.FC <{data: {content: string, title: string, created_at: string}}> = (props: {data: {content: string, title: string, created_at: string}}) => {
   const router = useRouter()

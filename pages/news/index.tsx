@@ -1,31 +1,8 @@
-import Header from '../../components/Header'
-import styled from 'styled-components'
 import React from 'react'
 import Link from 'next/link'
-import Footer from '../../components/Footer'
-import NewsList from '../../components/NewsList'
+import { Header, Footer, NewsList } from '../../components/'
+import { NewsBannerContainer, BreadcrumbNav, Row, Col, ListContainer,  Sidebar, HotNews, } from '../../public/styled/styled'
 import { queryNews } from '../../api/article'
-import { NewsBannerContainer, BreadcrumbNav, Row, Col, } from '../../public/styled/styled'
-
-const StyledContent = styled.div`
-	width: 1136px;
-	margin: 0 auto;
-  padding: 30px 0;
-  section { margin-bottom: 30px; }
-`
-const Sidebar = styled.div`
-  background: #fafafa; padding: 20px;
-  width: 200px; margin-right: 20px;
-  ul, li { margin: 0; padding: 0; }
-  li{  list-style: none; text-align: center; padding: 10px; border-bottom: 1px solid #666; font-size: 18px; }
-  a { color: #666; }
-  a:hover{ color: #000; }
-`;
-
-const HotNews = styled.div`
-  margin-top: 40px;
-  li{ line-height: 2; border-bottom: 1px dashed #666; font-size: 12px; }
-`;
 
 const getData = async (params?: any) => {
   const res = await queryNews({...params, per_page: 10});
@@ -80,7 +57,7 @@ class App extends React.Component <{data: {data: any, total: number}, news: any,
             <NewsBannerContainer><img src='/static/20210625/news-banner-title.png' /></NewsBannerContainer>
             <BreadcrumbNav><p><Link href='/'>首页</Link> {'>'} 新闻中心</p></BreadcrumbNav>
             <div style={{ background: '#fff', }}>
-              <StyledContent>
+              <ListContainer>
                 <section>
                   <div style={{ display: 'flex', flexFlow: 'row nowrap', alignItems: 'flex-start', justifyContent: 'space-between', }}>
                     <Sidebar>
@@ -108,7 +85,7 @@ class App extends React.Component <{data: {data: any, total: number}, news: any,
                     </div>
                   </div>
                 </section>
-              </StyledContent>
+              </ListContainer>
             </div>
           </main>
           :
