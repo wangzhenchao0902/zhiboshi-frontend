@@ -150,12 +150,14 @@ class App extends React.Component <{case: any, news: any}, isState> {
                   </Row>
                 </Title>
                 <div style={{ marginTop: 20, }}>
-                  <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-between', alignItems: 'center', }}>
+                  <div >
                     {this.props.news.map(item =>  (
-                      <Row style={{ justifyContent: 'space-between', color: '#fff', fontSize: 12, borderBottom: '1px dashed #dedede', lineHeight: 3, }}>
-                        <Col style={{ flex: 1, }}><Nowrap>{item.title.length > 16 ? (item.title.substr(0, 16)+'...') : item.title}</Nowrap></Col>
-                        <Col style={{ letterSpacing: -0.5, }}>{item.created_at}</Col>
-                      </Row>
+                      <Link href={item.href}><a>
+                        <Row style={{ justifyContent: 'space-between', color: '#fff', fontSize: 12, borderBottom: '1px dashed #dedede', lineHeight: 3, }}>
+                          <Col style={{ flex: 1, }}><Nowrap>{item.title.length > 16 ? (item.title.substr(0, 16)+'...') : item.title}</Nowrap></Col>
+                          <Col style={{ letterSpacing: -0.5, }}>{item.created_at}</Col>
+                        </Row>
+                      </a></Link>
                     ))}
                   </div>
                 </div>
