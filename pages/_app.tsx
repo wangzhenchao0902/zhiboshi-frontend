@@ -22,6 +22,13 @@ const HtmlStyle = createGlobalStyle`
     text-decoration: none;
     cursor: pointer;
   }
+  .ant-cascader-input,
+  .ant-input:focus, .ant-input-focused,
+  .ant-checkbox-inner, .ant-radio-inner,
+  .ant-checkbox-checked .ant-checkbox-inner,
+  .ant-radio-checked::after, .ant-checkbox-checked::after{ border-color: #ee7500!important; }
+  .ant-checkbox-checked .ant-checkbox-inner,
+  .ant-radio-inner::after, .ant-radio-inner::after{ background: #ee7500; }
 `
 class Zbs extends App {
   render(): React.ReactElement {
