@@ -124,7 +124,7 @@ const Offer: React.FC = () => {
                     <Col style={{ color: '#ee7500', width: '100px', }}>选择车衣型号：</Col>
                     <Col style={{ color: '#ee7500', flex: 1, }}>
                       <Radio.Group onChange={onMoChange}>
-                        {moList.map(d => (<Radio style={{width: '45%', whiteSpace: 'nowrap', color: '#ee7500', marginBottom: 12, }} value={d.id}>{d.name}</Radio> ))}
+                        {moList.map(d => (<Radio style={{width: '46%', whiteSpace: 'nowrap', color: '#ee7500', marginBottom: 12, }} value={d.id}>{d.name}</Radio> ))}
                       </Radio.Group>
                     </Col>
                   </Row>
@@ -133,7 +133,7 @@ const Offer: React.FC = () => {
                     <Col style={{ color: '#ee7500', flex: 1, lineHeight: 2, }}>
                       <Checkbox.Group onChange={onBodyChange}>
                         <Row style={{ flexFlow: 'row wrap', }}>
-                          {bodyList.map(d => (<Col style={{width: '45%', marginBottom: 12, }}><Checkbox value={d.id} style={{ color: '#ee7500', }}>{d.name}</Checkbox></Col>))}
+                          {bodyList.map(d => (<Col style={{width: '46%', whiteSpace: 'nowrap', marginBottom: 12, }}><Checkbox value={d.id} style={{ color: '#ee7500', }}>{d.name}</Checkbox></Col>))}
                         </Row>
                       </Checkbox.Group>
                     </Col>
