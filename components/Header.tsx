@@ -130,7 +130,7 @@ class Header extends React.Component<{noColorChange?: boolean, router: {pathname
             <>
               {
                 !this.state.isOpen ? 
-                    <div onClick={() => this.changeOpen(true)} style={{ position: 'absolute', top: 10, right: 10, zIndex: 9, }}><img src='/static/m/m-open.jpg' style={{ width: 30,}} /></div>
+                    <div onClick={() => this.changeOpen(true)} style={{ position: 'fixed', top: 10, right: 10, zIndex: 9, }}><img src='/static/m/m-open.jpg' style={{ width: 30,}} /></div>
                   :
                     <>
                       <div onClick={() => this.changeOpen(false)} style={{ position: 'fixed', top: 0, right: 0, bottom: 0, left: 0, zIndex: 1001, }}> </div>
