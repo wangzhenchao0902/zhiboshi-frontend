@@ -115,6 +115,7 @@ class App extends React.Component <{case: any, news: any}, isState> {
             :
             <>
               <div style={{ lineHeight: 0, }}><img src='/static/m/m-intro.jpg' style={{width: '100%', }} /></div>
+              <div style={{ lineHeight: 0, padding: '0 20px', }}><img src='/static/m/m-intro2.jpg' style={{width: '100%', }} /></div>
               <div style={{ lineHeight: 0, }}><img src='/static/m/m-brand.jpg' style={{width: '100%', }} /></div>
               <div style={{ lineHeight: 0, }}><img src='/static/m/m-guard.jpg' style={{width: '100%', }} /></div>
               <div style={{ lineHeight: 0, }}><img src='/static/m/m-youshi.jpg' style={{width: '100%', }} /></div>
