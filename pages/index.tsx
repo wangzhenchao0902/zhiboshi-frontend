@@ -74,7 +74,7 @@ class App extends React.Component <{case: any, news: any}, isState> {
                 </Row>
               </div>
               <div><img src='/static/20210625/brand.jpg' style={{width: '100%', }} /></div>
-              <div><img src='/static/20210625/youshi.jpg' style={{width: '100%', }} /></div>
+              <div><img src='/static/20210625/youshi.1.jpg' style={{width: '100%', }} /></div>
               <StyledSection>
                 <IndexLable title={CASE.cn} en_title={CASE.en} allHref="/case">
                   <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-between', alignItems: 'center', }}>
@@ -117,7 +117,7 @@ class App extends React.Component <{case: any, news: any}, isState> {
               <div style={{ lineHeight: 0, }}><img src='/static/m/m-intro.jpg' style={{width: '100%', }} /></div>
               <div style={{ lineHeight: 0, padding: '0 20px', }}><img src='/static/m/m-intro2.jpg' style={{width: '100%', }} /></div>
               <div style={{ lineHeight: 0, }}><img src='/static/m/m-brand.jpg' style={{width: '100%', }} /></div>
-              <div style={{ lineHeight: 0, }}><img src='/static/m/m-guard.jpg' style={{width: '100%', }} /></div>
+              <div style={{ lineHeight: 0, }}><img src='/static/m/m-guard.1.jpg' style={{width: '100%', }} /></div>
               <div style={{ lineHeight: 0, }}><img src='/static/m/m-youshi.jpg' style={{width: '100%', }} /></div>
               <div style={{ padding: 20, }}>
                 <Title>

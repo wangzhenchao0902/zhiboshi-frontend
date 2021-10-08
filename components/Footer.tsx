@@ -56,8 +56,8 @@ const MBNav = styled.div`
 `
 const MBNavBottom = styled.div`
   background: #ee8222; color: #fff; font-size: 16px; border-radius: 6px; overflow: hidden; white-space: nowrap; font-size: 14px; 
-  span{ padding: 5px 10px; display: inline-block; font-weight: bold; }
-  span + span{ border-left: 1px solid #333; }
+  span{ padding: 5px 10px; display: inline-block; font-weight: bold; width: 70%; }
+  span + span{ border-left: 1px solid #333; width: 30%; }
 `
 
 interface isState {
