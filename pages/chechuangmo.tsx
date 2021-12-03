@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { queryWarranties } from '../api/warranty'
+import { queryWarranties } from '../api/warrantyChechuang'
 import { List, Form, Input, Button } from 'antd';
 import 'antd/dist/antd.css'
 import { Header, Footer, } from '../components/'
@@ -68,7 +68,7 @@ const AntiFake: React.FC = () => {
               <StyledContent>
                 <StyledSection>
                   <FakeTitle style={{ marginTop: 40, }}>
-                    <h2>窗膜质保查询</h2>
+                    <h2>车窗膜质保查询</h2>
                     <h3>DRZ智博士您的第一款车衣</h3>
                   </FakeTitle>
                   <SelectForm>
@@ -154,7 +154,7 @@ const AntiFake: React.FC = () => {
                     </>
                   )}
                   {data instanceof Array && data.length === 0 && (
-                    <>抱歉，未查到相关质保记录</>
+                    <>抱歉，未查到相关车窗膜质保记录</>
                   )}
                   </WarrantyList>
               </>
