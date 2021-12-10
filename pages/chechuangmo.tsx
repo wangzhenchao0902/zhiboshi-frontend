@@ -69,7 +69,7 @@ const AntiFake: React.FC = () => {
                 <StyledSection>
                   <FakeTitle style={{ marginTop: 40, }}>
                     <h2>车窗膜质保查询</h2>
-                    <h3>DRZ智博士您的第一款车衣</h3>
+                    <h3>中科智造 品质好窗膜</h3>
                   </FakeTitle>
                   <SelectForm>
                     <Form form={form}
