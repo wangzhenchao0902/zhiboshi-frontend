@@ -84,7 +84,7 @@ const AntiFake: React.FC = () => {
                     </Form>
                   </SelectForm>
                   <WarrantyList>
-                    {data instanceof Array && data.length > 0 && (
+                    {data instanceof Array && data.filter(d => d.status === 1).length > 0 && (
                       <>
                         <List>
                           <List.Item>
@@ -110,7 +110,7 @@ const AntiFake: React.FC = () => {
                         <><img src='/static/zhibao.png' style={{ width: 600, margin: '24px auto' }} /></>
                       </>
                     )}
-                    {data instanceof Array && data.length === 0 && (
+                    {data instanceof Array && data.filter(d => d.status === 1).length === 0 && (
                       <>抱歉，未查到相关质保记录</>
                     )}
                     </WarrantyList>
@@ -133,7 +133,7 @@ const AntiFake: React.FC = () => {
                   </Form>
                 </SelectForm>
                 <WarrantyList style={{ width: 'auto', padding: 20, fontSize: 12, lineHeight: 2.25, }}>
-                  {data instanceof Array && data.length > 0 && (
+                  {data instanceof Array && data.filter(d => d.status === 1).length > 0 && (
                     <>
                       <Row style={{ whiteSpace: 'nowrap', textAlign: 'left', }}>
                         <Col>姓名：{data[0].name}</Col>
@@ -148,7 +148,7 @@ const AntiFake: React.FC = () => {
                       <><img src='/static/zhibao.png' style={{ width: '100%', margin: '24px auto' }} /></>
                     </>
                   )}
-                  {data instanceof Array && data.length === 0 && (
+                  {data instanceof Array && data.filter(d => d.status === 1).length === 0 && (
                     <>抱歉，未查到相关质保记录</>
                   )}
                   </WarrantyList>

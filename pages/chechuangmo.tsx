@@ -84,7 +84,7 @@ const AntiFake: React.FC = () => {
                     </Form>
                   </SelectForm>
                   <WarrantyList>
-                    {data instanceof Array && data.length > 0 && (
+                    {data instanceof Array && data.filter(d => d.status === 1).length > 0 && (
                       <>
                         <List>
                           <List.Item>
@@ -94,7 +94,7 @@ const AntiFake: React.FC = () => {
                             <div style={{ flex: 1, }}>开始时间</div>
                             <div style={{ flex: 1, }}>结束时间</div>
                           </List.Item>
-                          {data.map(item => (
+                          {data.filter(d => d.status === 1).map(item => (
                             <List.Item key={item.id}>
                               <div style={{ width: 100, }}>{item.name}</div>
                               <div style={{ width: 100, }}>{item.phone}</div>
@@ -110,7 +110,7 @@ const AntiFake: React.FC = () => {
                         <><img src='/static/zhibao-bolimo.png' style={{ width: 600, margin: '24px auto' }} /></>
                       </>
                     )}
-                    {data instanceof Array && data.length === 0 && (
+                    {data instanceof Array && data.filter(d => d.status === 1).length === 0 && (
                       <>抱歉，未查到相关质保记录</>
                     )}
                     </WarrantyList>
@@ -133,7 +133,7 @@ const AntiFake: React.FC = () => {
                   </Form>
                 </SelectForm>
                 <WarrantyList style={{ width: 'auto', padding: 20, fontSize: 12, lineHeight: 2.25, }}>
-                  {data instanceof Array && data.length > 0 && (
+                  {data instanceof Array && data.filter(d => d.status === 1).length > 0 && (
                     <>
                     {data.filter(d => d.status === 1).map(item => (
                       <>
@@ -153,7 +153,7 @@ const AntiFake: React.FC = () => {
                     <><img src='/static/zhibao-bolimo.png' style={{ width: '100%', margin: '24px auto' }} /></>
                     </>
                   )}
-                  {data instanceof Array && data.length === 0 && (
+                  {data instanceof Array && data.filter(d => d.status === 1).length === 0 && (
                     <>抱歉，未查到相关车窗膜质保记录</>
                   )}
                   </WarrantyList>
