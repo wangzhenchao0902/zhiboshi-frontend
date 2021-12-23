@@ -94,7 +94,7 @@ const AntiFake: React.FC = () => {
                             <div style={{ flex: 1, }}>开始时间</div>
                             <div style={{ flex: 1, }}>结束时间</div>
                           </List.Item>
-                          {data.map(item => (
+                          {data.filter(d => d.status === 1).map(item => (
                             <List.Item key={item.id}>
                               <div style={{ width: 100, }}>{item.name}</div>
                               <div style={{ width: 100, }}>{item.phone}</div>

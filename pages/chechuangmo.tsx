@@ -135,7 +135,7 @@ const AntiFake: React.FC = () => {
                 <WarrantyList style={{ width: 'auto', padding: 20, fontSize: 12, lineHeight: 2.25, }}>
                   {data instanceof Array && data.length > 0 && (
                     <>
-                    {data.map(item => (
+                    {data.filter(d => d.status === 1).map(item => (
                       <>
                         <Row style={{ whiteSpace: 'nowrap', textAlign: 'left', }}>
                           <Col>姓名：{item.name}</Col>
