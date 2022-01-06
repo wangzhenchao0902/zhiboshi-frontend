@@ -90,7 +90,7 @@ const AntiFake: React.FC = () => {
                           <List.Item>
                             <div style={{ width: 100, }}>姓名</div>
                             <div style={{ width: 100, }}>手机号</div>
-                            <div style={{ width: 80, }}>质保型号</div>
+                            <div style={{ width: 100, }}>质保型号</div>
                             <div style={{ width: 80, }}>质保时长</div>
                             <div style={{ flex: 1, }}>开始时间</div>
                             <div style={{ flex: 1, }}>结束时间</div>
