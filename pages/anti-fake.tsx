@@ -90,6 +90,7 @@ const AntiFake: React.FC = () => {
                           <List.Item>
                             <div style={{ width: 100, }}>姓名</div>
                             <div style={{ width: 100, }}>手机号</div>
+                            <div style={{ width: 80, }}>质保型号</div>
                             <div style={{ width: 80, }}>质保时长</div>
                             <div style={{ flex: 1, }}>开始时间</div>
                             <div style={{ flex: 1, }}>结束时间</div>
@@ -98,6 +99,7 @@ const AntiFake: React.FC = () => {
                             <List.Item key={item.id}>
                               <div style={{ width: 100, }}>{item.name}</div>
                               <div style={{ width: 100, }}>{item.phone}</div>
+                              <div style={{ width: 100, }}>{item.category || "不限"}</div>
                               <div style={{ width: 80, }}>{item.year}年</div>
                               <div style={{ flex: 1, }}>{item.start_at}</div>
                               <div style={{ flex: 1, }}>{item.end_at}</div>
@@ -137,8 +139,11 @@ const AntiFake: React.FC = () => {
                     <>
                       <Row style={{ whiteSpace: 'nowrap', textAlign: 'left', }}>
                         <Col>姓名：{data[0].name}</Col>
-                        <Col style={{ flex: 1, margin: '0 20px', }}>手机号： {data[0].phone}</Col>
-                        <Col>质保时长：{data[0].year}年</Col>
+                        <Col style={{ flex: 1, }}>手机号： {data[0].phone}</Col>
+                      </Row>
+                      <Row style={{ whiteSpace: 'nowrap', textAlign: 'left', }}>
+                        <Col>质保型号：{data[0].category || "不限"}</Col>
+                        <Col style={{ flex: 1, }}>质保时长：{data[0].year}年</Col>
                       </Row>
                       <Row style={{textAlign: 'left', }}>开始时间： {data[0].start_at}</Row>
                       <Row style={{textAlign: 'left', }}>结束时间： {data[0].end_at}</Row>
