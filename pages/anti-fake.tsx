@@ -38,7 +38,7 @@ const SelectForm = styled.div`
 `
 
 const WarrantyList = styled.div`
-  width: 600px;
+  width: 800px;
   min-height: 200px;
   margin: 0 auto;
   text-align: center;
