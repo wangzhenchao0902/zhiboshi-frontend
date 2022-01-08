@@ -28,7 +28,7 @@ interface isState {
   isWeb: boolean,
 }
 
-class Tags extends React.Component <{data: {data: any, total: number}}, isState> {
+class Tags extends React.Component <{tags: string, data: {data: any, total: number}}, isState> {
   constructor(props: any) {
     super(props)
     this.state = {
@@ -53,7 +53,7 @@ class Tags extends React.Component <{data: {data: any, total: number}}, isState>
               this.state.isWeb ? 
                 <>
                   <CaseBannerContainer><img src='/static/20210625/case-banner-title.png' /></CaseBannerContainer>
-                  <CaseBreadcrumbNav><p><Link href='/'>首页</Link> {'>'} <a href='/case'>案例中心</a> {'>'} </p></CaseBreadcrumbNav>
+                  <CaseBreadcrumbNav><p><Link href='/'>首页</Link> {'>'} <a href='/case'>案例中心</a> {'>'} {this.props.tags}</p></CaseBreadcrumbNav>
                   <main>
                     <ListContainer>
                       <section>
@@ -101,13 +101,12 @@ export async function getStaticProps({params}): Promise<{}> {
   const { data, total, } = await getData({ tags: encodeURI(params.tags), });
 	return {
 		props: {
+      tags: params.tags,
 			data: { data, total, }
     },
     revalidate: 1,
 	}
 }
-
-
 
 export async function getStaticPaths() {
   const paths = brandData.map((b) => ({
