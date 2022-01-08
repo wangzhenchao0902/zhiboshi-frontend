@@ -37,3 +37,8 @@ export async function allIds(category_id: number): Promise<Response> {
   const url = domain.concat('/api/article/allIds?category_id='.concat(category_id.toString()));
   return fetch(url)
 }
+
+export async function getTagCase(params?: any): Promise<Response> {
+  const url = domain.concat('/api/article/case');
+  return fetch(handleUrlWithParams(url, params))
+}
