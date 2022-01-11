@@ -65,6 +65,13 @@ class App extends React.Component <{data: {data: any, total: number}}, isState> 
                     }
                     <div style={{display: 'inline-block', verticalAlign: 'top', width: '110px', height: '100px', margin: '5px', background: 'transparent', }}></div>
                     <div style={{display: 'inline-block', verticalAlign: 'top', width: '110px', height: '100px', margin: '5px', background: 'transparent', }}></div>
+                    <div style={{display: 'inline-block', verticalAlign: 'top', width: '110px', height: '100px', margin: '5px', background: 'transparent', }}></div>
+                    <div style={{display: 'inline-block', verticalAlign: 'top', width: '110px', height: '100px', margin: '5px', background: 'transparent', }}></div>
+                    <div style={{display: 'inline-block', verticalAlign: 'top', width: '110px', height: '100px', margin: '5px', background: 'transparent', }}></div>
+                    <div style={{display: 'inline-block', verticalAlign: 'top', width: '110px', height: '100px', margin: '5px', background: 'transparent', }}></div>
+                    <div style={{display: 'inline-block', verticalAlign: 'top', width: '110px', height: '100px', margin: '5px', background: 'transparent', }}></div>
+                    <div style={{display: 'inline-block', verticalAlign: 'top', width: '110px', height: '100px', margin: '5px', background: 'transparent', }}></div>
+                    <div style={{display: 'inline-block', verticalAlign: 'top', width: '110px', height: '100px', margin: '5px', background: 'transparent', }}></div>
                   </div>
                 </main>
               </>
@@ -88,6 +95,7 @@ class App extends React.Component <{data: {data: any, total: number}}, isState> 
                         </div>
                       ))
                     }
+                    <div style={{display: 'inline-block', verticalAlign: 'top', width: '30%', height: '100px', margin: '5px', background: 'transparent', }}></div>
                     <div style={{display: 'inline-block', verticalAlign: 'top', width: '30%', height: '100px', margin: '5px', background: 'transparent', }}></div>
                     <div style={{display: 'inline-block', verticalAlign: 'top', width: '30%', height: '100px', margin: '5px', background: 'transparent', }}></div>
                   </div>
