@@ -75,23 +75,25 @@ class App extends React.Component <{case: any, news: any}, isState> {
               </div>
               <div><img src='/static/20210625/brand.jpg' style={{width: '100%', }} /></div>
               <div><img src='/static/20210625/youshi.1.jpg' style={{width: '100%', }} /></div>
-              <StyledSection>
-                <IndexLable title={CASE.cn} en_title={CASE.en} allHref="/case">
-                  <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-between', alignItems: 'center', }}>
-                    {this.props.case.map(item =>  (
-                      <Col key={item.id} style={{ width: 'calc(33.33% - 10 / 3 * 1px)', height: '220px', overflow: 'hidden', position: 'relative', marginTop: 5, }}>
-                        <ImageContainer>
-                          <Link href={item.href}>
-                            <a>
-                              <img src={item.src} />
-                            </a>
-                          </Link>
-                        </ImageContainer>
-                      </Col>
-                    ))}
-                  </div>
-                </IndexLable>
-              </StyledSection>
+              <StyledContent>
+                <StyledSection>
+                  <IndexLable title={CASE.cn} en_title={CASE.en} allHref="/case">
+                    <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-between', alignItems: 'center', }}>
+                      {this.props.case.map(item =>  (
+                        <Col key={item.id} style={{ width: 'calc(33.33% - 10 / 3 * 1px)', height: '220px', overflow: 'hidden', position: 'relative', marginTop: 5, }}>
+                          <ImageContainer>
+                            <Link href={item.href}>
+                              <a>
+                                <img src={item.src} />
+                              </a>
+                            </Link>
+                          </ImageContainer>
+                        </Col>
+                      ))}
+                    </div>
+                  </IndexLable>
+                </StyledSection>
+              </StyledContent>
               <StyledContent>
                 <StyledSection>
                   <IndexLable title={NEWS.cn} en_title={NEWS.en} allHref="/news">
@@ -110,7 +112,7 @@ class App extends React.Component <{case: any, news: any}, isState> {
                     </div>
                   </IndexLable>
                 </StyledSection>
-            </StyledContent>
+              </StyledContent>
             </>
             :
             <>
