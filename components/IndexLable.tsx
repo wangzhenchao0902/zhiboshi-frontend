@@ -55,7 +55,7 @@ const IndexLable: React.FC<LableProps> = (props: LableProps) => {
         <span>{props.en_title}</span>
       </div>
       {props.allHref && (
-        <Link href={props.allHref}>更多新闻</Link>
+        <Link href={props.allHref}>更多</Link>
       )}
     </Header>
     <Body>
