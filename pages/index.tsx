@@ -155,7 +155,7 @@ class App extends React.Component <{case: any, news: any}, isState> {
                     {this.props.news.map(item =>  (
                       <Link href={item.href}><a>
                         <Row style={{ justifyContent: 'space-between', color: '#fff', fontSize: 12, borderBottom: '1px dashed #dedede', lineHeight: 3, }}>
-                          <Col style={{ flex: 1, }}><Nowrap>{item.title.length > 16 ? (item.title.substr(0, 16)+'...') : item.title}</Nowrap></Col>
+                          <Col style={{ flex: 1, }}><Nowrap>{item.title.length > 20 ? (item.title.substr(0, 20)+'...') : item.title}</Nowrap></Col>
                           <Col style={{ letterSpacing: -0.5, }}>{item.created_at}</Col>
                         </Row>
                       </a></Link>
@@ -203,7 +203,7 @@ const getIndexNews = async () => {
   const datas = [];
   if (json.result) {
     json.data.data.forEach((item: any) => {
-      datas.push({title: item.title, created_at: item.created_at, href: "/news/".concat(item.id), id: item.id})
+      datas.push({title: item.title, created_at: item.created_at.split(' ')[0], href: "/news/".concat(item.id), id: item.id})
     });
   }
 	return {

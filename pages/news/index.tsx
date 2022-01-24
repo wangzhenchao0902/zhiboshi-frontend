@@ -23,7 +23,7 @@ const getIndexNews = async () => {
   const datas = [];
   if (json.result) {
     json.data.data.forEach((item: any) => {
-      datas.push({title: item.title, created_at: item.created_at, href: "/news/".concat(item.id), id: item.id})
+      datas.push({title: item.title, created_at: item.created_at.split(' ')[0], href: "/news/".concat(item.id), id: item.id})
     });
   }
 	return {
