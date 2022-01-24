@@ -9,7 +9,7 @@ const getData = async (params?: any) => {
   const json = await res.json()
   const datas = [];
   json.data.data.forEach((item: any) => {
-    datas.push({title: item.title, href: "/news/".concat(item.id), id: item.id, created_at: item.created_at})
+    datas.push({title: item.title, href: "/news/".concat(item.id), id: item.id, created_at: item.created_at.split(' ')[0]})
   });
 	return {
       total: json.data.total,
