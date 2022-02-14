@@ -1000,4 +1000,7 @@ export const brandData = [
   { cn: '宾利', en: '', hasData: 0, },
   { cn: '别克', en: '', hasData: 0, },
   { cn: '吉利', en: '', hasData: 1, },
+  { cn: '保时捷', en: '', hasData: 1, },
+  { cn: '极氪', en: '', hasData: 1, },
+  { cn: '宝骏', en: '', hasData: 1, },
 ];
