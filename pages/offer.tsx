@@ -115,13 +115,13 @@ const Offer: React.FC = () => {
                 <div style={{ lineHeight: 0, }}><img src='/static/m/m-banner-baojia.jpg' style={{width: '100%', }} /></div>
                 <div style={{ padding: '40px 20px', }}>
                   <Row style={{ alignItems: 'center', }}>
-                    <Col style={{ color: '#ee7500', width: '100px', textAlign: 'right', }}>选择车型：</Col>
+                    <Col style={{ color: '#ee7500', width: '70px', textAlign: 'right', }}>选择车型：</Col>
                     <Col style={{ color: '#ee7500', flex: 1, }}>
                       <Cascader options={brandList} onChange={onBrandChange} placeholder='请选择车型' changeOnSelect></Cascader>
                     </Col>
                   </Row>
                   <Row style={{ marginTop: 30, }}>
-                    <Col style={{ color: '#ee7500', width: '100px', }}>选择车衣型号：</Col>
+                    <Col style={{ color: '#ee7500', width: '70px', textAlign: 'right', }}>选&emsp;&emsp;择&emsp;<br />车衣型号：</Col>
                     <Col style={{ color: '#ee7500', flex: 1, }}>
                       <Radio.Group onChange={onMoChange}>
                         {moList.map(d => (<Radio style={{width: '46%', whiteSpace: 'nowrap', color: '#ee7500', marginBottom: 12, }} value={d.id}>{d.name}</Radio> ))}
@@ -129,7 +129,7 @@ const Offer: React.FC = () => {
                     </Col>
                   </Row>
                   <Row style={{ marginTop: 20, }}>
-                    <Col style={{ color: '#ee7500', width: '100px', }}>选择装贴部位：</Col>
+                    <Col style={{ color: '#ee7500', width: '70px', textAlign: 'right', }}>选&emsp;&emsp;择&emsp;<br />装贴部位：</Col>
                     <Col style={{ color: '#ee7500', flex: 1, lineHeight: 2, }}>
                       <Checkbox.Group onChange={onBodyChange}>
                         <Row style={{ flexFlow: 'row wrap', }}>
@@ -139,7 +139,7 @@ const Offer: React.FC = () => {
                     </Col>
                   </Row>
                   <Row style={{ marginTop: 10, alignItems: 'center', }}>
-                    <Col style={{ color: '#ee7500', width: '100px', textAlign: 'right',  }}>报价：</Col>
+                    <Col style={{ color: '#ee7500', width: '70px', textAlign: 'right',  }}>报价：</Col>
                     <Col style={{ color: '#ee7500', flex: 1, fontSize: '2em', }}>{ offerMoney === -1 ? '暂无报价': offerMoney === 0 ? '正在获取报价...' : (offerMoney + '元')}</Col>
                   </Row>
                 </div>
