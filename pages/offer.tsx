@@ -88,7 +88,7 @@ const Offer: React.FC = () => {
                       <Col style={{ color: '#ee7500', width: '100px', }}>选择车衣型号：</Col>
                       <Col style={{ color: '#ee7500', flex: 1, }}>
                         <Radio.Group onChange={onMoChange}>
-                          {moList.map(d => (<Radio style={{width: '22.5%', whiteSpace: 'nowrap', color: '#ee7500',  }} value={d.id}>{d.name}</Radio> ))}
+                          {moList.map(d => (<Radio style={{width: '22.5%', marginBottom: 12, whiteSpace: 'nowrap', color: '#ee7500',  }} value={d.id}>{d.name}</Radio> ))}
                         </Radio.Group>
                       </Col>
                     </Row>

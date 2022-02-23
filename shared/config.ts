@@ -38,54 +38,98 @@ export const CASE={'cn': '场景案例', 'en': 'CASE'};
 
 export const NEWS={'cn': '新闻速递', 'en': 'NEWS'};
 
+			
+			
+
+
 export const bodyList = [
   { id: 1, name: `前保险杠`, priceList: [
     { moId: 1, value: 1397, },
     { moId: 2, value: 2072, },
     { moId: 3, value: 2772, },
     { moId: 4, value: 2072, },
+
+    { moId: 11, value: 2212, },
+    { moId: 12, value: 2492, },
+    { moId: 13, value: 3612, },
+    { moId: 14, value: 2772, },
   ], },
   { id: 2, name: `后保险杠`, priceList: [
     { moId: 1, value: 1397, },
     { moId: 2, value: 2072, },
     { moId: 3, value: 2772, },
     { moId: 4, value: 2072, },
+
+    { moId: 11, value: 2212, },
+    { moId: 12, value: 2492, },
+    { moId: 13, value: 3612, },
+    { moId: 14, value: 2772, },
   ], },
   { id: 3, name: `引擎盖`, priceList: [
     { moId: 1, value: 898, },
     { moId: 2, value: 1332, },
     { moId: 3, value: 1782, },
     { moId: 4, value: 1332, },
+
+    { moId: 11, value: 1422, },
+    { moId: 12, value: 1602, },
+    { moId: 13, value: 2322, },
+    { moId: 14, value: 1782, },
   ], },
   { id: 4, name: `前叶子板`, priceList: [
     { moId: 1, value: 699, },
     { moId: 2, value: 1036, },
     { moId: 3, value: 1386, },
     { moId: 4, value: 1036, },
+
+    { moId: 11, value: 1106, },
+    { moId: 12, value: 1246, },
+    { moId: 13, value: 1806, },
+    { moId: 14, value: 1386, },
   ], },
   { id: 5, name: `后叶子板`, priceList: [
     { moId: 1, value: 2794, },
     { moId: 2, value: 4144, },
     { moId: 3, value: 5544, },
     { moId: 4, value: 4144, },
+
+    { moId: 11, value: 4424, },
+    { moId: 12, value: 4984, },
+    { moId: 13, value: 7224, },
+    { moId: 14, value: 5544, },
   ], },
   { id: 6, name: `侧裙`, priceList: [
     { moId: 1, value: 499, },
     { moId: 2, value: 740, },
     { moId: 3, value: 990, },
     { moId: 4, value: 740, },
+
+    { moId: 11, value: 790, },
+    { moId: 12, value: 890, },
+    { moId: 13, value: 1290, },
+    { moId: 14, value: 990, },
   ], },
   { id: 7, name: `车后盖/尾盖`, priceList: [
     { moId: 1, value: 898, },
     { moId: 2, value: 1332, },
     { moId: 3, value: 1782, },
     { moId: 4, value: 1332, },
+
+    { moId: 11, value: 1422, },
+    { moId: 12, value: 1602, },
+    { moId: 13, value: 2322, },
+    { moId: 14, value: 1782, },
   ], },
   { id: 8, name: `四车门`, priceList: [
     { moId: 1, value: 1397, },
     { moId: 2, value: 2072, },
     { moId: 3, value: 2772, },
     { moId: 4, value: 2072, },
+
+    { moId: 11, value: 2212, },
+    { moId: 12, value: 2492, },
+    { moId: 13, value: 3612, },
+    { moId: 14, value: 2772, },
   ], },
 ]
 
@@ -94,6 +138,11 @@ export const moList = [
   { id: 2, name: `全能王14800`, },
   { id: 3, name: `仿生王19800`, },
   { id: 4, name: `哑光版14800`, },
+
+  { id: 11, name: `风麒麟15800`, },
+  { id: 12, name: `火麒麟17800`, },
+  { id: 13, name: `雷麒麟25800`, },
+  { id: 14, name: `火麒麟哑光版19800`, },
 ]
 
 export const brandList = [
