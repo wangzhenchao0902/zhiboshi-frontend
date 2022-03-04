@@ -139,11 +139,11 @@ const AntiFake: React.FC = () => {
                     <>
                       <Row style={{ whiteSpace: 'nowrap', textAlign: 'left', }}>
                         <Col>姓名：{data[0].name}</Col>
-                        <Col style={{ flex: 1, }}>手机号： {data[0].phone}</Col>
+                        <Col style={{ flex: 1, marginLeft: 20, }}>手机号： {data[0].phone}</Col>
                       </Row>
                       <Row style={{ whiteSpace: 'nowrap', textAlign: 'left', }}>
                         <Col>质保型号：{data[0].category || "不限"}</Col>
-                        <Col style={{ flex: 1, }}>质保时长：{data[0].year}年</Col>
+                        <Col style={{ flex: 1, marginLeft: 20, }}>质保时长：{data[0].year}年</Col>
                       </Row>
                       <Row style={{textAlign: 'left', }}>开始时间： {data[0].start_at}</Row>
                       <Row style={{textAlign: 'left', }}>结束时间： {data[0].end_at}</Row>
