@@ -5,7 +5,6 @@ import { Header, Footer, CoverList, } from '../../components/'
 import { ListContainer, Title, CaseBannerContainer, CaseBreadcrumbNav } from '../../public/styled/styled'
 import { getTagCase, } from '../../api/article'
 
-
 const getData = async (params?: any) => {
   const res = await getTagCase({ ...params, per_page: 9, });
   const json = await res.json()
@@ -37,7 +36,7 @@ class Tags extends React.Component <{tags: string, data: {data: any, total: numb
   }
   
   pageChange = async (page: number): Promise<any> => {
-    return getData({page});
+    return getData({ tags: this.props.tags, page});
   }
 
   componentDidMount() {

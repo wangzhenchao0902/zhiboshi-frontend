@@ -26,7 +26,7 @@ const NavList = styled.div`
   display: flex;
   justify-content: center;
   a {
-    margin: 0 1.5em;
+    padding: 0 1.5em;
     font-size: 16px;
     position: relative;
     color: #fff;
@@ -35,15 +35,15 @@ const NavList = styled.div`
       &::after {
         content: '';
         height: 3px;
-        width: 100%;
         position: absolute;
-        bottom: 0;
-        left: 0;
+        bottom: -2px;
+        left: 1.5em;
+        right: 1.5em;
         background-color: rgb(236, 184, 179);
       }
     }
   }
-  a + a::before{ content: ''; position: absolute; left: -2em; top: 50%; transform: translateY(-50%); width: 1px; background: #aa5600; height: 12px; }
+  a + a::before{ content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 1px; background: #aa5600; height: 12px; }
 `
 
 const IconGroup = styled.div`
@@ -58,10 +58,10 @@ const StyledLink = styled.a<{selected:boolean}>`
           content: '';
           background-color: #ea4335!important;
           height: 3px;
-          width: 100%;
           position: absolute;
-          bottom: 0;
-          left: 0;
+          bottom: -2px;
+          left: 1.5em;
+          right: 1.5em;
         }
       `
     };
