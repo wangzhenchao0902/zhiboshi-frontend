@@ -5,6 +5,7 @@ export const LINK_ROUTERS = [
   { name: '新闻中心', path: '/news', key: 'news' },
   { name: '车衣质保查询', path: '/anti-fake', key: 'fake' },
   { name: '车窗膜质保查询', path: '/chechuangmo', key: 'chechuangmo' },
+  { name: '天窗冰甲质保查询', path: '/tianchuangmo', key: 'tianchuangmo' },
   { name: '报价查询', path: '/offer', key: 'offer' },
   { name: '关于我们', path: '/about', key: 'about' }
 ]
