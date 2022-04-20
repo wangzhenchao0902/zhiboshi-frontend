@@ -107,7 +107,7 @@ const AntiFake: React.FC = () => {
                         {data[0].complimentary === 1 && (
                           <>售后政策：质保期内 意外剐蹭局部免费补膜，总计不超15米 </>
                         )}
-                        <><img src='/static/zhibao-bolimo.png' style={{ width: 600, margin: '24px auto' }} /></>
+                        <><img src='/static/zhibao-tianchuangbingjia.png' style={{ width: 600, margin: '24px auto' }} /></>
                       </>
                     )}
                     {data instanceof Array && data.filter(d => d.status === 1).length === 0 && (
@@ -150,7 +150,7 @@ const AntiFake: React.FC = () => {
                         <hr style={{ background: '#ee7500', height: '1px', border: 'none' }} />
                       </>
                     ))}
-                    <><img src='/static/zhibao-bolimo.png' style={{ width: '100%', margin: '24px auto' }} /></>
+                    <><img src='/static/zhibao-tianchuangbingjia.png' style={{ width: '100%', margin: '24px auto' }} /></>
                     </>
                   )}
                   {data instanceof Array && data.filter(d => d.status === 1).length === 0 && (
