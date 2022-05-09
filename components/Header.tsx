@@ -26,7 +26,7 @@ const NavList = styled.div`
   display: flex;
   justify-content: center;
   a {
-    padding: 0 1em;
+    padding: 0 2em;
     font-size: 16px;
     position: relative;
     color: #fff;
