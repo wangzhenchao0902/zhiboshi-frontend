@@ -610,6 +610,10 @@ export const brandList = [
     { id: 4105, name: `自由光`, },
     { id: 4106, name: `自由侠`, },
   ], },
+  { id: 202201, name: `极氪`, series: [
+    { id: 20220101, name: `ZEEKR 001`, },
+    { id: 20220102, name: `ZEEKR 009`, },
+  ], },
   { id: 42, name: `凯迪拉克`, series: [
     { id: 4201, name: `XTS`, },
     { id: 4202, name: `CTS`, },
