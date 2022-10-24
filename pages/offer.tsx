@@ -77,7 +77,7 @@ const Offer: React.FC = () => {
                     <h2>报价查询</h2>
                     <h3>DRZ智博士您的第一款车衣</h3>
                   </FakeTitle>
-                  <div style={{width: 600, marginRight: 50, marginTop: 30, }}>
+                  <div style={{width: 720, marginRight: 50, marginTop: 30, }}>
                     <Row style={{ marginTop: 30, alignItems: 'center', }}>
                       <Col style={{ color: '#ee7500', width: '100px', textAlign: 'right', }}>选择车型：</Col>
                       <Col style={{ color: '#ee7500', flex: 1, }}>

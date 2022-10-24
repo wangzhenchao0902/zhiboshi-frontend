@@ -53,6 +53,9 @@ export const bodyList = [
     { moId: 12, value: 2492, },
     { moId: 13, value: 3612, },
     { moId: 14, value: 2772, },
+
+    { moId: 21, value: 2772, },
+    { moId: 22, value: 2772, },
   ], },
   { id: 2, name: `后保险杠`, priceList: [
     { moId: 1, value: 1397, },
@@ -64,6 +67,9 @@ export const bodyList = [
     { moId: 12, value: 2492, },
     { moId: 13, value: 3612, },
     { moId: 14, value: 2772, },
+
+    { moId: 21, value: 2772, },
+    { moId: 22, value: 2772, },
   ], },
   { id: 3, name: `引擎盖`, priceList: [
     { moId: 1, value: 898, },
@@ -75,6 +81,9 @@ export const bodyList = [
     { moId: 12, value: 1602, },
     { moId: 13, value: 2322, },
     { moId: 14, value: 1782, },
+
+    { moId: 21, value: 1782, },
+    { moId: 22, value: 1782, },
   ], },
   { id: 4, name: `前叶子板`, priceList: [
     { moId: 1, value: 699, },
@@ -86,6 +95,9 @@ export const bodyList = [
     { moId: 12, value: 1246, },
     { moId: 13, value: 1806, },
     { moId: 14, value: 1386, },
+
+    { moId: 21, value: 1386, },
+    { moId: 22, value: 1386, },
   ], },
   { id: 5, name: `后叶子板`, priceList: [
     { moId: 1, value: 2794, },
@@ -97,6 +109,9 @@ export const bodyList = [
     { moId: 12, value: 4984, },
     { moId: 13, value: 7224, },
     { moId: 14, value: 5544, },
+
+    { moId: 21, value: 5544, },
+    { moId: 22, value: 5544, },
   ], },
   { id: 6, name: `侧裙`, priceList: [
     { moId: 1, value: 499, },
@@ -108,6 +123,9 @@ export const bodyList = [
     { moId: 12, value: 890, },
     { moId: 13, value: 1290, },
     { moId: 14, value: 990, },
+
+    { moId: 21, value: 990, },
+    { moId: 22, value: 990, },
   ], },
   { id: 7, name: `车后盖/尾盖`, priceList: [
     { moId: 1, value: 898, },
@@ -119,6 +137,9 @@ export const bodyList = [
     { moId: 12, value: 1602, },
     { moId: 13, value: 2322, },
     { moId: 14, value: 1782, },
+
+    { moId: 21, value: 1782, },
+    { moId: 22, value: 1782, },
   ], },
   { id: 8, name: `四车门`, priceList: [
     { moId: 1, value: 1397, },
@@ -130,6 +151,9 @@ export const bodyList = [
     { moId: 12, value: 2492, },
     { moId: 13, value: 3612, },
     { moId: 14, value: 2772, },
+
+    { moId: 21, value: 2772, },
+    { moId: 22, value: 2772, },
   ], },
 ]
 
@@ -143,6 +167,9 @@ export const moList = [
   { id: 12, name: `火麒麟17800`, },
   { id: 13, name: `雷麒麟25800`, },
   { id: 14, name: `火麒麟哑光版19800`, },
+
+  { id: 21, name: `亮黑TPU19800`, },
+  { id: 22, name: `亚光黑TPU19800`, },
 ]
 
 export const brandList = [
