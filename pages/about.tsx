@@ -59,7 +59,7 @@ const Detail: React.FC <{data: {content: string, title: string, created_at: stri
               <>
                 <BannerContainer><img src='/static/20210625/about-banner-title.png' /></BannerContainer>
                 <Nav><p><Link href='/'>首页</Link> {'>'} 关于我们</p></Nav>
-                <div><img src='/static/20210625/data.1.jpg' style={{width: '100%', }} /></div>
+                <div><img src='/static/20230712/about.jpg' style={{width: '100%', }} /></div>
                 <div style={{ background: 'url("/static/20210625/about-bg.jpg") no-repeat', backgroundSize: 'cover', padding: '30px 30px 100px', }}>
                   <Row style={{minWidth: 1200, width: '80%', padding: '30px 0', margin: '0 auto'}}>
                     <Col style={{ lineHeight: 0, flex: 1, }} ><img src='/static/20210625/about-intro.jpg' style={{ height: 560, }} /></Col>
@@ -81,7 +81,7 @@ const Detail: React.FC <{data: {content: string, title: string, created_at: stri
             :
             <div style={{ background: '#f7f7f7', }}>
               <div style={{ lineHeight: 0, }}><img src='/static/m/m-banner-aboutus.jpg' style={{width: '100%', }} /></div>
-              <div style={{ lineHeight: 0, }}><img src='/static/m/m-aboutus-data.jpg' style={{width: '100%', }} /></div>
+              <div style={{ lineHeight: 0, }}><img src='/static/20230712/mabout.jpg' style={{width: '100%', }} /></div>
               <div style={{ lineHeight: 0, }}><img src='/static/m/m-aboutus-brand.jpg' style={{width: '100%', }} /></div>
               <div style={{ lineHeight: 0, margin: '20px auto', textAlign: 'center', }}><img src='/static/m/m-aboutus-1.png' style={{width: '76.2%', }} /></div>
               <div style={{ lineHeight: 0, margin: '0 auto', textAlign: 'center', }}><img src='/static/m/m-aboutus-2.png' style={{width: '88.9%', }} /></div>
