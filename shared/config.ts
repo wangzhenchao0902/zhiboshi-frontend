@@ -56,6 +56,9 @@ export const bodyList = [
 
     { moId: 21, value: 2772, },
     { moId: 22, value: 2772, },
+
+    { moId: 31, value: 1092, },
+    { moId: 32, value: 1372, },
   ], },
   { id: 2, name: `后保险杠`, priceList: [
     { moId: 1, value: 1397, },
@@ -70,6 +73,9 @@ export const bodyList = [
 
     { moId: 21, value: 2772, },
     { moId: 22, value: 2772, },
+
+    { moId: 31, value: 1092, },
+    { moId: 32, value: 1372, },
   ], },
   { id: 3, name: `引擎盖`, priceList: [
     { moId: 1, value: 898, },
@@ -84,6 +90,9 @@ export const bodyList = [
 
     { moId: 21, value: 1782, },
     { moId: 22, value: 1782, },
+
+    { moId: 31, value: 702, },
+    { moId: 32, value: 882, },
   ], },
   { id: 4, name: `前叶子板`, priceList: [
     { moId: 1, value: 699, },
@@ -98,6 +107,9 @@ export const bodyList = [
 
     { moId: 21, value: 1386, },
     { moId: 22, value: 1386, },
+
+    { moId: 31, value: 546, },
+    { moId: 32, value: 686, },
   ], },
   { id: 5, name: `后叶子板`, priceList: [
     { moId: 1, value: 2794, },
@@ -112,6 +124,9 @@ export const bodyList = [
 
     { moId: 21, value: 5544, },
     { moId: 22, value: 5544, },
+
+    { moId: 31, value: 2184, },
+    { moId: 32, value: 2744, },
   ], },
   { id: 6, name: `侧裙`, priceList: [
     { moId: 1, value: 499, },
@@ -126,6 +141,9 @@ export const bodyList = [
 
     { moId: 21, value: 990, },
     { moId: 22, value: 990, },
+
+    { moId: 31, value: 390, },
+    { moId: 32, value: 490, },
   ], },
   { id: 7, name: `车后盖/尾盖`, priceList: [
     { moId: 1, value: 898, },
@@ -140,6 +158,9 @@ export const bodyList = [
 
     { moId: 21, value: 1782, },
     { moId: 22, value: 1782, },
+
+    { moId: 31, value: 702, },
+    { moId: 32, value: 882, },
   ], },
   { id: 8, name: `四车门`, priceList: [
     { moId: 1, value: 1397, },
@@ -154,6 +175,9 @@ export const bodyList = [
 
     { moId: 21, value: 2772, },
     { moId: 22, value: 2772, },
+
+    { moId: 31, value: 1092, },
+    { moId: 32, value: 1372, },
   ], },
 ]
 
@@ -170,6 +194,9 @@ export const moList = [
 
   { id: 21, name: `亮黑TPU19800`, },
   { id: 22, name: `亚光黑TPU19800`, },
+
+  { id: 31, name: `中科蔚仕-D65`, },
+  { id: 32, name: `中科蔚仕-D75`, },
 ]
 
 export const brandList = [
