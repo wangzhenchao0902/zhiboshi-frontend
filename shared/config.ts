@@ -254,6 +254,13 @@ export const brandList = [
     { id: 503, name: `Giulia`, },
     { id: 504, name: `Stelvio`, },
   ], },
+  { id: 202301, name: `AITO`, series: [
+    { id: 20230101, name: `问界M5`, },
+    { id: 20230102, name: `问界M7`, },
+  ], },
+  { id: 202302, name: `阿维塔`, series: [
+    { id: 20230201, name: `11`, },
+  ], },
   { id: 6, name: `宾利`, series: [
     { id: 601, name: `欧陆`, },
     { id: 602, name: `慕尚`, },
@@ -632,8 +639,8 @@ export const brandList = [
   ], },
   { id: 38, name: `悍马`, series: [
     { id: 3801, name: `H2`, },
-    { id: 3802, name: `H2`, },
-    { id: 3803, name: `H3`, },
+    { id: 3802, name: `H3`, },
+    // { id: 3803, name: `H3`, },
   ], },
   { id: 39, name: `吉利`, series: [
     { id: 3901, name: `博越`, },
@@ -667,6 +674,9 @@ export const brandList = [
   { id: 202201, name: `极氪`, series: [
     { id: 20220101, name: `ZEEKR 001`, },
     { id: 20220102, name: `ZEEKR 009`, },
+  ], },
+  { id: 202303, name: `极狐`, series: [
+    { id: 20230301, name: `阿尔法S HI版`, },
   ], },
   { id: 42, name: `凯迪拉克`, series: [
     { id: 4201, name: `XTS`, },
