@@ -195,8 +195,8 @@ export const moList = [
   { id: 21, name: `亮黑TPU19800`, },
   { id: 22, name: `亚光黑TPU19800`, },
 
-  { id: 31, name: `中科蔚仕-D70`, },
-  { id: 32, name: `中科蔚仕-D80`, },
+  { id: 31, name: `中科蔚仕-D70 7800`, },
+  { id: 32, name: `中科蔚仕-D80 9800`, },
 ]
 
 export const brandList = [

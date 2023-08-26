@@ -77,7 +77,7 @@ const Offer: React.FC = () => {
                     <h2>报价查询</h2>
                     <h3>DRZ智博士您的第一款车衣</h3>
                   </FakeTitle>
-                  <div style={{width: 720, marginRight: 50, marginTop: 30, }}>
+                  <div style={{width: 800, marginRight: 50, marginTop: 30, }}>
                     <Row style={{ marginTop: 30, alignItems: 'center', }}>
                       <Col style={{ color: '#ee7500', width: '100px', textAlign: 'right', }}>选择车型：</Col>
                       <Col style={{ color: '#ee7500', flex: 1, }}>
@@ -124,7 +124,7 @@ const Offer: React.FC = () => {
                     <Col style={{ color: '#ee7500', width: '70px', textAlign: 'right', }}>车衣型号：</Col>
                     <Col style={{ color: '#ee7500', flex: 1, }}>
                       <Radio.Group onChange={onMoChange}>
-                        {moList.map(d => (<Radio style={{width: '46%', whiteSpace: 'nowrap', color: '#ee7500', marginBottom: 12, }} value={d.id}>{d.name}</Radio> ))}
+                        {moList.map(d => (<Radio style={{width: d.name.length >= 13 ? '100%': '46%', whiteSpace: 'nowrap', color: '#ee7500', marginBottom: 12, }} value={d.id}>{d.name}</Radio> ))}
                       </Radio.Group>
                     </Col>
                   </Row>
