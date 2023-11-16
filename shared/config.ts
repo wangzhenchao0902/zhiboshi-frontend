@@ -704,6 +704,9 @@ export const brandList = [
   { id: 46, name: `理想`, series: [
     { id: 4601, name: `理想ONE`, },
     { id: 4602, name: `理想One`, },
+    { id: 4603, name: `理想L7`, },
+    { id: 4604, name: `理想L8`, },
+    { id: 4605, name: `理想L9`, },
   ], },
   { id: 47, name: `雷克萨斯`, series: [
     { id: 4701, name: `LM`, },
