@@ -257,6 +257,7 @@ export const brandList = [
   { id: 202301, name: `AITO`, series: [
     { id: 20230101, name: `问界M5`, },
     { id: 20230102, name: `问界M7`, },
+    { id: 20230103, name: `问界M9`, },
   ], },
   { id: 202302, name: `阿维塔`, series: [
     { id: 20230201, name: `11`, },
