@@ -183,6 +183,7 @@ export const bodyList = [
 
 export const moList = [
   { id: 1, name: `金刚盾9800`, },
+  { id: 101, name: `金刚盾s7800`, },
   { id: 2, name: `全能王14800`, },
   { id: 3, name: `仿生王19800`, },
   { id: 4, name: `哑光版14800`, },
